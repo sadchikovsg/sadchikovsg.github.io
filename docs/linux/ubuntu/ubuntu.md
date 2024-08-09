@@ -1,7 +1,7 @@
 ---
 title: Ubuntu page
 layout: ubuntu
-parent: linux
+parent: Linux is cool
 has_children: true
 ---
 
