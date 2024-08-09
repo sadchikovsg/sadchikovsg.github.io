@@ -1,6 +1,6 @@
 ---
 title: Ubuntu page
-layout: ubuntu
+layout: default
 parent: Linux
 has_children: true
 ---
