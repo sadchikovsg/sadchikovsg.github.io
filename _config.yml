@@ -103,7 +103,7 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "Just the Docs on GitHub":
+  "SSG Docs on GitHub":
     - "https://github.com/sadchikovsg/sadchikovsg.github.io"
 
 # Makes Aux links open in a new tab. Default is false
