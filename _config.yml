@@ -5,9 +5,14 @@ baseurl: ""
 
 remote_theme: pmarsceill/just-the-docs
 
-color_scheme: dark
+# Включаем кастомную тему
+color_scheme: custom
+
 search_enabled: true
 heading_anchors: true
+
+# Включаем кнопку копирования для блоков кода
+enable_copy_code_button: true
 
 # Mermaid diagrams - минимальная конфигурация
 mermaid:
