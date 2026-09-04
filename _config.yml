@@ -3,7 +3,7 @@ description: Портфолио и техническая документаци
 url: "https://sadchikovsg.github.io"
 baseurl: "" 
 
-remote_theme: pages-themes/just-the-docs
+remote_theme: pmarsceill/just-the-docs
 
 color_scheme: dark
 search_enabled: true
@@ -13,6 +13,9 @@ heading_anchors: true
 mermaid:
   version: "9.4.3"
 
+# favicon
+favicon_ico: "/favicon.ico"
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -21,13 +24,3 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-# --- Custom Just the Docs Settings ---
-# Включаем кнопку копирования для блоков кода
-enable_copy_code_button: true
-
-# Указываем кастомную цветовую схему (создадим её на Уровне 2)
-color_scheme: custom
-
-# Кастомный фавикон (положи файл favicon.png или .ico в корень)
-favicon_ico: "/favicon.ico"
