@@ -49,16 +49,16 @@ parent: Кейсы и проекты
 
 <div class="mermaid">
 graph TD
-    subgraph "Developer Zone"
+    subgraph DeveloperZone
         Dev[Developer] -->|git push| GitLab[GitLab Repository]
     end
 
-    subgraph "CI/CD Pipeline (Bastion Host)"
+    subgraph CICDPipeline
         GitLab -->|Trigger| Runner[GitLab Runner]
         Runner -->|Build (Kaniko)| Registry[(Container Registry)]
     end
 
-    subgraph "Cloud B (Prod)"
+    subgraph CloudBProd
         Runner -->|Deploy via Docker Context (SSH)| Prod[App Server]
         Prod -->|Pull Image| Registry
         Prod -->|Connect| DB[(Managed MySQL 8.0)]
