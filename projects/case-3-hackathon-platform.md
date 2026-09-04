@@ -5,7 +5,7 @@ nav_order: 3
 parent: Кейсы и проекты
 ---
 
-# 🚀 Кейс 3: Разработка Internal Developer Platform (IDP) для хакатона
+# 💼 Кейс 3: Разработка Internal Developer Platform (IDP) для хакатона
 
 **Роль:** DevOps / Platform Engineer  
 **Длительность:** ~83 часа (полный цикл: от проектирования до поддержки в проде и демонтажа)  
@@ -48,24 +48,22 @@ parent: Кейсы и проекты
 
 ## 🏗 Архитектура платформы
 
-<div class="mermaid">
+```mermaid
 graph TD
-    subgraph "Команды разработки"
-        Dev[Участники/Наставники] -->|git push / change vars| GitLab[GitLab Self-Managed]
+    subgraph Teams [Development Teams]
+        Dev[Participants/Mentors] -->|git push / change vars| GitLab[GitLab Self-Managed]
     end
 
-    subgraph "CI/CD Platform Repo"
+    subgraph Platform [CI/CD Platform Repo]
         GitLab -->|include| Templates[Reusable CI Templates]
         Templates -->|Kaniko Build| Registry[Container Registry]
     end
 
-    subgraph "Hackathon Environment (Rootless Podman)"
+    subgraph Hackathon [Hackathon Environment - Rootless Podman]
         GitLab -->|Trigger| Runner[GitLab Runner]
         Runner -->|SSH + Compose| DeployScript[deploy-remote.sh]
         DeployScript -->|Inject Unique DB_HOST| Stack[Isolated Team Stack]
         Stack --> Registry
     end
+```
 
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
-    classDef platform fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    class Templates,DeployScript platform;

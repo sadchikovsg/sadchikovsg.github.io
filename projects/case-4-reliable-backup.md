@@ -49,30 +49,28 @@ parent: Кейсы и проекты
 
 ## 🏗 Архитектура процесса резервного копирования
 
-<div class="mermaid">
+```mermaid
 graph TD
-    subgraph "Target Server (User: deployer)"
-        DB[(PostgreSQL / Redis)] -->|pg_dump / BGSAVE| Staging[Staging Dir]
+    subgraph Target [Target Server - User: deployer]
+        DB[(PostgreSQL / Redis)] -->|pg_dump / BGSAVE| Staging[Staging Directory]
         Staging -->|restic backup --tag| Restic[Restic Client]
     end
 
-    subgraph "Automation & Orchestration"
+    subgraph Automation [Automation and Orchestration]
         Systemd[Systemd User Timer] -->|Trigger daily| BackupScript[backup.sh]
         BackupScript -->|on fail| Email[send-email.py]
         Ansible[Ansible Role] -.->|Manages| Systemd
         Ansible -.->|Manages| Restic
     end
 
-    subgraph "Cloud Storage"
+    subgraph Storage [Cloud Storage - S3]
         Restic -->|AES-256 Encrypted + Dedup| S3[(S3 Bucket)]
         S3 -->|restic forget --group-by| Cleanup[Smart Retention Policy]
     end
 
-    subgraph "CI/CD Integration"
+    subgraph CI [CI/CD Integration]
         GitLab[GitLab CI] -->|restic_backup_enabled=true| Ansible
-        GitLab -->|Masked Vars| S3_Creds[S3_BUCKET_BACKUPS_*]
+        GitLab -->|Masked Variables| S3Creds[S3_BUCKET_BACKUPS_*]
     end
+```
 
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
-    classDef secure fill:#ffebee,stroke:#c62828,stroke-width:2px;
-    class Restic,S3,Ansible secure;

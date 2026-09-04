@@ -5,7 +5,7 @@ nav_order: 2
 parent: Кейсы и проекты
 ---
 
-#  Кейс 2: Построение DevSecOps-платформы и IaC для EdTech-продукта
+# 🔐 Кейс 2: Построение DevSecOps-платформы и IaC для EdTech-продукта
 
 **Роль:** DevOps / Platform Engineer  
 **Длительность:** ~176 часов (полный цикл: от миграции репозиториев до Production Ready)  
@@ -47,24 +47,22 @@ parent: Кейсы и проекты
 
 ##  Архитектура синхронизации IaC
 
-<div class="mermaid">
+```mermaid
 graph TD
-    subgraph "Terraform (IaC)"
+    subgraph Terraform [Terraform - IaC]
         TF[terraform apply] --> Outputs[outputs: IPs, DB endpoints]
     end
-
-    subgraph "Sync Layer"
+    
+    subgraph Sync [Sync Layer]
         Outputs -->|update-gitlab-vars.sh| GitLabVars[GitLab Group Variables]
         Outputs -->|Phase CLI| Phase[Phase Secrets Manager]
     end
-
-    subgraph "Ansible CI/CD"
+    
+    subgraph Ansible [Ansible CI/CD]
         GitLabVars -->|env injection| Generate[generate-inventory.sh]
         Generate --> Inventory[inventory.yml]
         Inventory --> Playbook[ansible-playbook]
         Playbook --> Servers[DEV / PROD Servers]
     end
+```
 
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
-    classDef sync fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
-    class GitLabVars,Phase sync;
