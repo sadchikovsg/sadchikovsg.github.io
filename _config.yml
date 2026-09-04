@@ -39,3 +39,7 @@ mermaid:
         "htmlLabels": true
       }
     }
+
+# Mermaid diagrams support
+mermaid:
+  version: "9.4.3"
