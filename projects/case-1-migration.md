@@ -7,7 +7,7 @@ parent: Кейсы и проекты
 
 #  Кейс 1: Миграция и платформенная трансформация Legacy-проекта (Cloud A → Cloud B)
 
-**Роль:** Lead DevOps Engineer  
+**Роль:** DevOps Engineer  
 **Длительность:** ~68 часов (полный цикл от аудита до Post-Migration Support)  
 **Стек:** Cloud VPS, GitLab CI, Kaniko, Docker, Traefik, Managed MySQL 8.0, Ansible, Bash, Python.
 
@@ -47,7 +47,7 @@ parent: Кейсы и проекты
 
 ## 🏗 Архитектура решения
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph "Developer Zone"
         Dev[Developer] -->|git push| GitLab[GitLab Repository]

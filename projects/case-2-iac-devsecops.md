@@ -7,7 +7,7 @@ parent: Кейсы и проекты
 
 #  Кейс 2: Построение DevSecOps-платформы и IaC для EdTech-продукта
 
-**Роль:** Lead DevOps / Platform Engineer  
+**Роль:** DevOps / Platform Engineer  
 **Длительность:** ~176 часов (полный цикл: от миграции репозиториев до Production Ready)  
 **Стек:** Terraform, Ansible, GitLab CI, Kaniko, Managed PostgreSQL, S3, Phase (Secrets Management), Bash.
 
@@ -47,7 +47,7 @@ parent: Кейсы и проекты
 
 ##  Архитектура синхронизации IaC
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph "Terraform (IaC)"
         TF[terraform apply] --> Outputs[outputs: IPs, DB endpoints]

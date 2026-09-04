@@ -49,7 +49,7 @@ parent: Кейсы и проекты
 
 ## 🏗 Архитектура процесса резервного копирования
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph "Target Server (User: deployer)"
         DB[(PostgreSQL / Redis)] -->|pg_dump / BGSAVE| Staging[Staging Dir]

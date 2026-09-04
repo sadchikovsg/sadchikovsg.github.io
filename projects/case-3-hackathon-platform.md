@@ -7,7 +7,7 @@ parent: Кейсы и проекты
 
 # 🚀 Кейс 3: Разработка Internal Developer Platform (IDP) для хакатона
 
-**Роль:** Lead DevOps / Platform Engineer  
+**Роль:** DevOps / Platform Engineer  
 **Длительность:** ~83 часа (полный цикл: от проектирования до поддержки в проде и демонтажа)  
 **Стек:** GitLab Self-Managed, Podman (rootless), Traefik, Terraform, Ansible, Bash.
 
@@ -48,7 +48,7 @@ parent: Кейсы и проекты
 
 ## 🏗 Архитектура платформы
 
-```mermaid
+<div class="mermaid">
 graph TD
     subgraph "Команды разработки"
         Dev[Участники/Наставники] -->|git push / change vars| GitLab[GitLab Self-Managed]
