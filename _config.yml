@@ -3,7 +3,7 @@ description: Портфолио и техническая документаци
 url: "https://sadchikovsg.github.io"
 baseurl: "" 
 
-remote_theme: pmarsceill/just-the-docs
+remote_theme: pages-themes/cayman@v0.2.0
 
 color_scheme: dark
 search_enabled: true
