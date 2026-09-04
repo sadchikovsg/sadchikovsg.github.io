@@ -49,16 +49,16 @@ parent: Кейсы и проекты
 
 ```mermaid
 graph TD
-    subgraph DeveloperZone
+    subgraph DeveloperZone [Developer Zone]
         Dev[Developer] -->|git push| GitLab[GitLab Repository]
     end
     
-    subgraph CICDPipeline
+    subgraph CICDPipeline [CI/CD Pipeline]
         GitLab -->|Trigger| Runner[GitLab Runner]
         Runner -->|Build| Registry[Container Registry]
     end
     
-    subgraph CloudBProd
+    subgraph CloudBProd [Cloud B - Production]
         Runner -->|Deploy SSH| Prod[App Server]
         Prod -->|Pull Image| Registry
         Prod -->|Connect| DB[Managed MySQL]
