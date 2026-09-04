@@ -47,7 +47,7 @@ parent: Кейсы и проекты
 
 ## 🏗 Архитектура решения
 
-<div class="mermaid">
+```mermaid
 graph TD
     subgraph DeveloperZone
         Dev[Developer] -->|git push| GitLab[GitLab Repository]
@@ -64,4 +64,4 @@ graph TD
         Prod -->|Connect| DB[Managed MySQL]
         User[End User] -->|HTTPS| Prod
     end
-</div>
+```
