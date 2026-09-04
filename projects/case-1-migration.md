@@ -5,7 +5,7 @@ nav_order: 1
 parent: Кейсы и проекты
 ---
 
-#  Кейс 1: Миграция и платформенная трансформация Legacy-проекта (Cloud A → Cloud B)
+# 🚀 Кейс 1: Миграция и платформенная трансформация Legacy-проекта (Cloud A → Cloud B)
 
 **Роль:** DevOps Engineer  
 **Длительность:** ~68 часов (полный цикл от аудита до Post-Migration Support)  
@@ -49,23 +49,17 @@ parent: Кейсы и проекты
 
 <div class="mermaid">
 graph TD
-    subgraph DeveloperZone
-        Dev[Developer] -->|git push| GitLab[GitLab Repository]
-    end
-
-    subgraph CICDPipeline
-        GitLab -->|Trigger| Runner[GitLab Runner]
-        Runner -->|Build (Kaniko)| Registry[(Container Registry)]
-    end
-
-    subgraph CloudBProd
-        Runner -->|Deploy via Docker Context (SSH)| Prod[App Server]
-        Prod -->|Pull Image| Registry
-        Prod -->|Connect| DB[(Managed MySQL 8.0)]
-        
-        User[End User] -->|HTTPS (Traefik Auto-TLS)| Prod
-    end
-
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
-    classDef cloud fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
-    class Prod,DB cloud;
+  subgraph DeveloperZone
+    Dev[Developer] -->|"git push"| GitLab[GitLab Repository]
+  end
+  subgraph CICDPipeline
+    GitLab -->|"Trigger"| Runner[GitLab Runner]
+    Runner -->|"Build Kaniko"| Registry[(Container Registry)]
+  end
+  subgraph CloudBProd
+    Runner -->|"Deploy via SSH"| Prod[App Server]
+    Prod -->|"Pull Image"| Registry
+    Prod -->|"Connect"| DB[(Managed MySQL 8.0)]
+    User[End User] -->|"HTTPS"| Prod
+  end
+</div>
