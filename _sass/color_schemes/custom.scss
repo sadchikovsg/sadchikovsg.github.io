@@ -1,29 +1,35 @@
-// Hacker Theme - Terminal Aesthetic
+// Hacker Theme - Official Green Colors
 
-// Основной акцентный цвет (оранжево-желтый как в hacker)
-$brand-color: #ffa500;
-$brand-color-dark: #ff8c00;
-$brand-color-light: #ffb347;
+// Основной акцентный цвет (ярко-зеленый как в оригинальном Hacker)
+$brand-color: #5fb13b;
+$brand-color-dark: #4a8f2e;
+$brand-color-light: #7dd356;
 
-// Цвета для темной темы (как в hacker)
+// Цвета для темной темы (как в оригинальном Hacker)
 $body-background-color: #1c1c1c;        // Темно-серый фон
 $sidebar-color: #242424;                // Чуть светлее для сайдбара
-$body-text-color: #e0e0e0;              // Светло-серый текст
-$body-heading-color: #ffa500;           // Оранжевые заголовки
+$body-text-color: #c9c9c9;              // Светло-серый текст (улучшенная читаемость)
+$body-heading-color: #5fb13b;           // Зеленые заголовки
 $nav-child-link-color: #aaaaaa;         // Серые ссылки
 
+// Улучшенная навигация (критично для читаемости)
+$nav-list-link-color: #c9c9c9;
+$nav-list-link-hover-color: #5fb13b;
+$nav-list-link-active-color: #5fb13b;
+$nav-list-link-active-bg: #2a2a2a;      // Темный фон для активного пункта (контраст!)
+
 // Ссылки
-$link-color: #ffa500;
-$btn-primary-color: #ffa500;
+$link-color: #5fb13b;
+$btn-primary-color: #5fb13b;
 $btn-primary-text-color: #1c1c1c;
 
 // Улучшаем блоки кода (терминальный стиль)
 $code-background-color: #2a2a2a;
-$code-text-color: #00ff00;              // Зеленый текст как в терминале
+$code-text-color: #00ff00;              // Ярко-зеленый текст как в терминале
 $code-font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace;
 
 // Таблицы
-$table-text-color: #e0e0e0;
+$table-text-color: #c9c9c9;
 $table-background-color: #242424;
 
 // Границы
@@ -32,6 +38,6 @@ $border-color-light: #333333;
 
 // Callouts (выноски)
 $warning-background-color: #3d2b00;     // Темно-оранжевый фон
-$warning-color: #ffa500;                // Оранжевый текст
+$warning-color: #ffb347;                // Оранжевый текст
 $note-background-color: #1a2a3a;        // Темно-синий фон
 $note-color: #87ceeb;                   // Голубой текст
