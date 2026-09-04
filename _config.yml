@@ -21,3 +21,13 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# --- Custom Just the Docs Settings ---
+# Включаем кнопку копирования для блоков кода
+enable_copy_code_button: true
+
+# Указываем кастомную цветовую схему (создадим её на Уровне 2)
+color_scheme: custom
+
+# Кастомный фавикон (положи файл favicon.png или .ico в корень)
+favicon_ico: "/favicon.ico"

@@ -1,0 +1,21 @@
+// Кастомная цветовая схема "DevOps Professional"
+
+// Основной акцентный цвет (современный синий/teal)
+$brand-color: #0ea5e9;
+$brand-color-dark: #0284c7;
+
+// Цвета для темной темы (переопределяем дефолтные)
+$body-background-color: #0f172a; // Slate 900 (глубокий темный)
+$sidebar-color: #1e293b;         // Slate 800 (чуть светлее для сайдбара)
+$body-text-color: #e2e8f0;       // Slate 200 (мягкий белый для текста)
+$body-heading-color: #f8fafc;    // Slate 50 (яркий белый для заголовков)
+
+// Цвета для Callouts (выносок)
+$warning-background-color: #451a03; // Темно-оранжевый фон
+$warning-color: #fdba74;            // Светло-оранжевый текст
+$note-background-color: #172554;    // Темно-синий фон
+$note-color: #93c5fd;               // Светло-синий текст
+
+// Улучшаем блоки кода
+$code-background-color: #1e293b;
+$code-text-color: #e2e8f0;
