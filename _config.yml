@@ -25,3 +25,17 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+# Mermaid diagrams support
+mermaid:
+  version: "9.4.3"
+  config: |
+    {
+      "startOnLoad": true,
+      "theme": "dark",
+      "securityLevel": "loose",
+      "flowchart": {
+        "useMaxWidth": true,
+        "htmlLabels": true
+      }
+    }
