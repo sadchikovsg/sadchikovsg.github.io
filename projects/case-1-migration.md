@@ -49,17 +49,19 @@ parent: Кейсы и проекты
 
 <div class="mermaid">
 graph TD
-  subgraph DeveloperZone
-    Dev[Developer] -->|"git push"| GitLab[GitLab Repository]
-  end
-  subgraph CICDPipeline
-    GitLab -->|"Trigger"| Runner[GitLab Runner]
-    Runner -->|"Build Kaniko"| Registry[(Container Registry)]
-  end
-  subgraph CloudBProd
-    Runner -->|"Deploy via SSH"| Prod[App Server]
-    Prod -->|"Pull Image"| Registry
-    Prod -->|"Connect"| DB[(Managed MySQL 8.0)]
-    User[End User] -->|"HTTPS"| Prod
-  end
+    subgraph DeveloperZone
+        Dev[Developer] -->|git push| GitLab[GitLab Repository]
+    end
+    
+    subgraph CICDPipeline
+        GitLab -->|Trigger| Runner[GitLab Runner]
+        Runner -->|Build| Registry[Container Registry]
+    end
+    
+    subgraph CloudBProd
+        Runner -->|Deploy SSH| Prod[App Server]
+        Prod -->|Pull Image| Registry
+        Prod -->|Connect| DB[Managed MySQL]
+        User[End User] -->|HTTPS| Prod
+    end
 </div>
