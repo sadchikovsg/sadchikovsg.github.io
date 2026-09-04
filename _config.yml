@@ -1,22 +1,18 @@
-# _config.yml
 title: Сергей Садчиков | DevOps Engineer
 description: Портфолио и техническая документация. Platform Engineering, CI/CD, IaC, Kubernetes.
-url: "https://sadchikovsg.github.io" # Пока без кастомного домена
+url: "https://sadchikovsg.github.io"
 baseurl: "" 
 
-# Подключение темы как удаленной зависимости
 remote_theme: pmarsceill/just-the-docs
 
-# Настройки Just the Docs
-color_scheme: dark # Или light, по вкусу
+color_scheme: dark
 search_enabled: true
 heading_anchors: true
 
-# Включаем поддержку Mermaid для схем архитектуры
+# Mermaid diagrams support (Just the Docs v0.4.0+)
 mermaid:
-  version: "9.1.3"
+  version: "9.4.3"
 
-# Исключаем ненужные файлы из сборки
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -25,21 +21,3 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-# Mermaid diagrams support
-mermaid:
-  version: "9.4.3"
-  config: |
-    {
-      "startOnLoad": true,
-      "theme": "dark",
-      "securityLevel": "loose",
-      "flowchart": {
-        "useMaxWidth": true,
-        "htmlLabels": true
-      }
-    }
-
-# Mermaid diagrams support
-mermaid:
-  version: "9.4.3"
