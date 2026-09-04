@@ -1,16 +1,37 @@
-// Кастомная цветовая схема "DevOps Professional"
+// Hacker Theme - Terminal Aesthetic
 
-// Основной акцентный цвет (современный синий/teal)
-$brand-color: #0ea5e9;
-$brand-color-dark: #0284c7;
+// Основной акцентный цвет (оранжево-желтый как в hacker)
+$brand-color: #ffa500;
+$brand-color-dark: #ff8c00;
+$brand-color-light: #ffb347;
 
-// Цвета для темной темы (переопределяем дефолтные)
-$body-background-color: #0f172a; // Slate 900 (глубокий темный)
-$sidebar-color: #1e293b;         // Slate 800 (чуть светлее для сайдбара)
-$body-text-color: #e2e8f0;       // Slate 200 (мягкий белый для текста)
-$body-heading-color: #f8fafc;    // Slate 50 (яркий белый для заголовков)
-$nav-child-link-color: #94a3b8;  // Slate 400
+// Цвета для темной темы (как в hacker)
+$body-background-color: #1c1c1c;        // Темно-серый фон
+$sidebar-color: #242424;                // Чуть светлее для сайдбара
+$body-text-color: #e0e0e0;              // Светло-серый текст
+$body-heading-color: #ffa500;           // Оранжевые заголовки
+$nav-child-link-color: #aaaaaa;         // Серые ссылки
 
-// Улучшаем блоки кода
-$code-background-color: #1e293b;
-$code-text-color: #e2e8f0;
+// Ссылки
+$link-color: #ffa500;
+$btn-primary-color: #ffa500;
+$btn-primary-text-color: #1c1c1c;
+
+// Улучшаем блоки кода (терминальный стиль)
+$code-background-color: #2a2a2a;
+$code-text-color: #00ff00;              // Зеленый текст как в терминале
+$code-font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace;
+
+// Таблицы
+$table-text-color: #e0e0e0;
+$table-background-color: #242424;
+
+// Границы
+$border-color: #444444;
+$border-color-light: #333333;
+
+// Callouts (выноски)
+$warning-background-color: #3d2b00;     // Темно-оранжевый фон
+$warning-color: #ffa500;                // Оранжевый текст
+$note-background-color: #1a2a3a;        // Темно-синий фон
+$note-color: #87ceeb;                   // Голубой текст
