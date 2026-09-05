@@ -40,13 +40,15 @@ nav_order: 2
 
 ---
 
-## 🗄️ Databases, Storage & Reliability
+## 🗄️ Databases, Messaging & Storage
 
 | Технология | Уровень | Применение |
 |:---|:---|:---|
-| **PostgreSQL / MySQL** | Expert | Миграции с верификацией (~7 млн строк), `pg_dump`, бэкапы |
-| **Restic** | Expert | AES-256 шифрование, дедупликация, smart retention, tagging |
-| **S3** | Advanced | Хранение бэкапов, Restic repository, Bucket Policies |
+| **PostgreSQL / MySQL** | Expert | Миграции с верификацией (~7 млн строк), `pg_dump`, бэкапы, настройка реплик. |
+| **Apache Kafka (YC Managed)** | Advanced | Проектирование и развертывание High Availability (HA) кластеров, интеграция с VPC и Security Groups. |
+| **RabbitMQ** | Advanced | Контейнеризация, развертывание Management UI, интеграция с приложениями. |
+| **Restic** | Expert | AES-256 шифрование, дедупликация, smart retention, tagging. |
+| **S3** | Advanced | Хранение бэкапов, Restic repository, Bucket Policies, изоляция данных. |
 
 ---
 
