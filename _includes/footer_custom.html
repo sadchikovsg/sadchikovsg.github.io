@@ -1,18 +1,29 @@
 <style>
-  footer.site-footer,
-  .site-footer {
-    font-size: 0.75rem !important;
-    opacity: 0.6 !important;
-    margin-top: 2rem !important;
-    padding-top: 1rem !important;
-    border-top: 1px solid #333 !important;
+  /* Стили для мобильной навигации в футере */
+  .mobile-nav-footer {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-  
-  .site-footer p {
-    font-size: 0.75rem !important;
-    margin: 0 !important;
+  .mobile-nav-footer .btn {
+    font-size: 0.85rem !important;
+    padding: 8px 12px !important;
+    flex: 1;
+    text-align: center;
+    min-width: 120px;
+  }
+  /* Плавная прокрутка для всей страницы */
+  html {
+    scroll-behavior: smooth;
   }
 </style>
-<footer class="site-footer">
-  <p>© {% assign current_year = site.time | date: '%Y' %}{{ current_year }} Sergey Sadchikov</p>
-</footer>
+
+<div class="mobile-nav-footer">
+  <a href="/" class="btn">🏠 На главную</a>
+  <a href="#" class="btn">↑ Наверх</a>
+</div>
