@@ -4,9 +4,9 @@ layout: page
 nav_order: 2
 ---
 
-#  Технологический стек
+# 🛠 Технологический стек
 
-Мой инструментарий сформирован на основе решения реальных производственных задач. Ниже — технологии, с которыми я работаю ежедневно, сгруппированные по областям.
+Мой инструментарий сформирован на основе решения реальных производственных задач. Ниже — технологии, с которыми я работаю ежедневно, а также направления, которые я активно развиваю в рамках R&D.
 
 ---
 
@@ -15,7 +15,6 @@ nav_order: 2
 | Технология | Уровень | Применение |
 |:---|:---|:---|
 | **Yandex Cloud** | Expert | Cloud VPS, Managed PostgreSQL, S3, VPC, Security Groups |
-| **AWS** | Advanced | S3, IAM, EC2 (базовое администрирование) |
 | **Terraform** | Expert | Модульная IaC-архитектура (IAM, Network, Compute, Data слои) |
 | **Ansible** | Expert | Dynamic Inventory, CI/CD Pipeline, идемпотентная настройка серверов |
 
@@ -25,73 +24,45 @@ nav_order: 2
 
 | Технология | Уровень | Применение |
 |:---|:---|:---|
-| **GitLab CI** | Expert | Пайплайны с Kaniko, reusable templates, masked variables |
-| **GitLab Self-Managed** | Advanced | Администрирование, оптимизация бэкапов (9.1 GB → 44 MB) |
+| **GitLab CI / Self-Managed** | Expert | Пайплайны с Kaniko, reusable templates, оптимизация бэкапов |
 | **Kaniko** | Expert | Изолированная сборка Docker-образов без DinD |
-| **Bash** | Expert | Скрипты миграции, бэкапов, sync-скрипты Terraform→Ansible |
-| **Python** | Advanced | Кастомные healthcheck-скрипты, email-уведомления, автоматизация |
+| **Bash / Python** | Expert | Скрипты миграции, бэкапов, sync-скрипты Terraform→Ansible, healthchecks |
 
 ---
 
-## 🐳 Containers & Orchestration
+## 🐳 Containers & Networking
 
 | Технология | Уровень | Применение |
 |:---|:---|:---|
-| **Docker** | Expert | Multi-stage builds, Docker Context, security hardening (cap_drop, no-new-privileges) |
-| **Podman (rootless)** | Advanced | Изолированные среды для хакатона, сетевое изолирование |
-| **Docker Compose** | Advanced | Параметризованные манифесты для команд разработки |
+| **Docker** | Expert | Multi-stage builds, Docker Context, security hardening (`cap_drop`, `no-new-privileges`) |
+| **Podman (rootless)** | Advanced | Изолированные среды, сетевое изолирование (успешно применено на хакатоне) |
+| **Traefik / Nginx** | Expert | Reverse proxy, Auto-TLS, маршрутизация, ACL |
 
 ---
 
-## 🌐 Networking & Security
+## 🗄️ Databases, Storage & Reliability
 
 | Технология | Уровень | Применение |
 |:---|:---|:---|
-| **Traefik** | Expert | Auto-TLS, reverse proxy, маршрутизация |
-| **Bastion Host** | Expert | Единственная точка входа на Prod, SSH-туннели |
-| **Phase** | Advanced | Secrets Management, интеграция с GitLab CI |
-| **S3 Bucket Policies** | Advanced | Изоляция данных между сервисами |
-| **DNS** | Advanced | Аудит зависимостей, миграция NS-записей, TTL/MX/SPF/DKIM |
-
----
-
-## 🗄️ Databases & Storage
-
-| Технология | Уровень | Применение |
-|:---|:---|:---|
-| **PostgreSQL** | Expert | Миграции с верификацией (~250K строк), pg_dump, бэкапы |
-| **MySQL 8.0** | Advanced | Managed, миграция ~7 млн строк с проверкой целостности |
-| **Redis** | Advanced | BGSAVE, бэкапы, восстановление |
-| **S3** | Expert | Хранение бэкапов, Restic repository, retention policies |
-
----
-
-##  Backup & Reliability
-
-| Технология | Уровень | Применение |
-|:---|:---|:---|
+| **PostgreSQL / MySQL** | Expert | Миграции с верификацией (~7 млн строк), `pg_dump`, бэкапы |
 | **Restic** | Expert | AES-256 шифрование, дедупликация, smart retention, tagging |
-| **Systemd (user-level)** | Advanced | Таймеры для ежедневных бэкапов без root-прав |
+| **S3** | Advanced | Хранение бэкапов, Restic repository, Bucket Policies |
 
 ---
 
-## 🖥️ OS & Core
+## 🔬 Homelab & R&D (Активное развитие)
 
-| Технология | Уровень | Применение |
+*Поскольку в последних коммерческих проектах доминировали VPS и Managed-сервисы, я целенаправленно развиваю навыки работы с оркестрацией в собственном лабораторном окружении (Homelab), чтобы быть готовым к Enterprise-задачам.*
+
+| Технология | Статус | Что реализую / Изучаю |
 |:---|:---|:---|
-| **Linux** | Expert | 7+ лет администрирования, cgroups, namespaces, сетевой стек |
-| **Git** | Expert | Git Flow, миграция репозиториев, управление версиями |
-
----
-
-##  Observability & Monitoring
-
-| Технология | Уровень | Применение |
-|:---|:---|:---|
-| **Custom Healthchecks** | Expert | Python-скрипты с проверкой БД, PID-файлов, портов |
-| **Alerting** | Advanced | Email-уведомления с корректной обработкой UTF-8/MIME |
+| **Kubernetes (K8s)** | В активной фазе | Развертывание HA-кластера на собственном железе. Изучение архитектуры (Control Plane, etcd, CNI, CSI). |
+| **GitOps (ArgoCD)** | Изучение | Настройка декларативного деплоя приложений в кластер из Git-репозитория. |
+| **Observability** | Изучение | Стек Prometheus + Grafana + Loki для мониторинга состояния нод и подов в Homelab. |
+| **eBPF / Cilium** | Планируется | Изучение современных подходов к сетевой безопасности и наблюдаемости в K8s. |
 
 ---
 
 > {: .note }
-> **Принцип выбора инструментов:** Я предпочитаю решения, которые дают максимальный контроль и прозрачность. Например, Restic вместо проприетарных backup-сервисов, Kaniko вместо DinD, rootless Podman вместо Docker от root. Безопасность и предсказуемость важнее "магии из коробки".
+> **Мой принцип:** Я предпочитаю решения, которые дают максимальный контроль и прозрачность. Глубокое понимание работы контейнеров (Docker/Podman), сетей (Traefik, DNS) и ОС (Linux cgroups/namespaces) делает мой переход к Kubernetes не "изучением с нуля", а естественным масштабированием уже имеющихся знаний.
+
