@@ -1,4 +1,4 @@
-// Hacker Theme - Navigation Fix (агрессивные селекторы)
+// Hacker Theme - Navigation Contrast Fix
 
 // Заголовок сайта
 .site-title {
@@ -18,25 +18,22 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
 }
 
-// Навигация: hover
 .nav-list-link:hover {
   color: #7dd356 !important;
   background-color: #2a2a2a !important;
 }
 
-// АКТИВНЫЙ ПУНКТ МЕНЮ (максимально специфичный селектор)
-.site-nav .nav-list .nav-list-item.active > .nav-list-link,
-.nav-list .nav-list-item.active > .nav-list-link,
+// АКТИВНЫЙ ПУНКТ МЕНЮ - максимальный контраст
 .nav-list-item.active > .nav-list-link {
-  color: #5fb13b !important;
-  background-color: #1a1a1a !important;
+  color: #ffffff !important;  // Белый текст для максимального контраста
+  background-color: #0a0a0a !important;  // Очень темный фон
   font-weight: bold !important;
   border-left: 4px solid #5fb13b !important;
-  padding-left: 8px !important;
+  padding-left: 12px !important;
 }
 
 // Вложенные пункты меню
-.site-nav .nav-list .nav-list .nav-list-link {
+.nav-list .nav-list-item .nav-list-link {
   color: #5fb13b !important;
 }
 
