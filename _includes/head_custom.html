@@ -1,41 +1,57 @@
 <style>
-  /* Принудительная стилизация активного пункта меню */
-  .site-nav .nav-list .nav-list-item.active > .nav-list-link,
-  .nav-list .nav-list-item.active > .nav-list-link {
-    color: #5fb13b !important;
-    background-color: #1a1a1a !important;
-    font-weight: bold !important;
-    border-left: 4px solid #5fb13b !important;
-    padding-left: 12px !important;
-  }
-  
-  /* Все пункты меню зелёные */
-  .site-nav .nav-list-link {
-    color: #5fb13b !important;
-  }
-  
-  .site-nav .nav-list .nav-list .nav-list-link {
-    color: #5fb13b !important;
-  }
-  
-  /* Заголовок сайта */
+  /* === ЗАГОЛОВОК САЙТА (компактный, без переносов) === */
   .site-title {
     color: #5fb13b !important;
     font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
     font-weight: bold !important;
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+    white-space: normal !important;
   }
-  
-  /* Заголовки разделов */
+
+  /* === ВСЕ ЗАГОЛОВКИ === */
   h1, h2, h3, h4, h5, h6 {
     color: #5fb13b !important;
   }
-  
-  /* Моноширинный код */
+
+  /* === НАВИГАЦИЯ: ВСЕ ПУНКТЫ === */
+  .site-nav .nav-list-link,
+  .nav-list-link {
+    color: #5fb13b !important;
+    font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+  }
+
+  .site-nav .nav-list-link:hover,
+  .nav-list-link:hover {
+    color: #7dd356 !important;
+    background-color: #2a2a2a !important;
+  }
+
+  /* === АКТИВНЫЙ ПУНКТ МЕНЮ (БЕЗ ГРАДИЕНТА) === */
+  .site-nav .nav-list .nav-list-item.active > .nav-list-link,
+  .nav-list .nav-list-item.active > .nav-list-link,
+  .nav-list-item.active > .nav-list-link {
+    color: #5fb13b !important;
+    background: #1a1a1a !important;
+    background-color: #1a1a1a !important;
+    background-image: none !important; /* УБИРАЕМ ГРАДИЕНТ */
+    font-weight: bold !important;
+    border-left: 4px solid #5fb13b !important;
+    padding-left: 12px !important;
+  }
+
+  /* === КОД И ТАБЛИЦЫ === */
   code, pre {
     font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
   }
   
-  /* Footer */
+  th {
+    background-color: #242424 !important;
+    color: #5fb13b !important;
+  }
+
+  /* === FOOTER === */
   .site-footer {
     color: #666666 !important;
     font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;

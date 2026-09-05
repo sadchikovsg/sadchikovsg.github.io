@@ -5,20 +5,14 @@ baseurl: ""
 
 remote_theme: pmarsceill/just-the-docs
 
-# Применяем кастомную hacker-схему
-color_scheme: custom
+color_scheme: dark
 
 search_enabled: true
 heading_anchors: true
 
-# Включаем кнопку копирования для блоков кода
-enable_copy_code_button: true
-
-# Mermaid diagrams
 mermaid:
   version: "9.4.3"
 
-# favicon
 favicon_ico: "/favicon.ico"
 
 exclude:
