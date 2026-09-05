@@ -1,2 +1,43 @@
-<!-- Custom JavaScript for active nav item -->
-<script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+<style>
+  /* Принудительная стилизация активного пункта меню */
+  .site-nav .nav-list .nav-list-item.active > .nav-list-link,
+  .nav-list .nav-list-item.active > .nav-list-link {
+    color: #5fb13b !important;
+    background-color: #1a1a1a !important;
+    font-weight: bold !important;
+    border-left: 4px solid #5fb13b !important;
+    padding-left: 12px !important;
+  }
+  
+  /* Все пункты меню зелёные */
+  .site-nav .nav-list-link {
+    color: #5fb13b !important;
+  }
+  
+  .site-nav .nav-list .nav-list .nav-list-link {
+    color: #5fb13b !important;
+  }
+  
+  /* Заголовок сайта */
+  .site-title {
+    color: #5fb13b !important;
+    font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+    font-weight: bold !important;
+  }
+  
+  /* Заголовки разделов */
+  h1, h2, h3, h4, h5, h6 {
+    color: #5fb13b !important;
+  }
+  
+  /* Моноширинный код */
+  code, pre {
+    font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+  }
+  
+  /* Footer */
+  .site-footer {
+    color: #666666 !important;
+    font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+  }
+</style>
