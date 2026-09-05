@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сергей Садчиков - CV</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 10pt;
+            line-height: 1.3;
+            color: #333;
+            background: #fff;
+            padding: 15px;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+        h1 { font-size: 22pt; color: #2d5016; margin-bottom: 5px; }
+        h2 { font-size: 13pt; color: #2d5016; border-bottom: 2px solid #2d5016; margin: 15px 0 8px 0; padding-bottom: 3px; }
+        h3 { font-size: 11pt; color: #444; margin: 8px 0 3px 0; }
+        .subtitle { font-size: 11pt; color: #666; margin-bottom: 8px; }
+        .contacts { font-size: 9pt; color: #555; margin-bottom: 15px; }
+        .contacts a { color: #2d5016; text-decoration: none; }
+        .summary { font-size: 9.5pt; margin-bottom: 12px; text-align: justify; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 9pt; }
+        th, td { border: 1px solid #ddd; padding: 5px 8px; text-align: left; vertical-align: top; }
+        th { background: #f5f5f5; font-weight: 600; }
+        .job { margin-bottom: 12px; }
+        .job-header { font-weight: 600; margin-bottom: 3px; }
+        .job-meta { font-size: 9pt; color: #666; margin-bottom: 5px; font-style: italic; }
+        .job ul { margin-left: 15px; margin-bottom: 5px; }
+        .job li { margin-bottom: 3px; }
+        .metrics { font-weight: 600; color: #2d5016; }
+        @media print {
+            body { padding: 10px; }
+            h1 { font-size: 20pt; }
+            a { color: #333; text-decoration: none; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Сергей Садчиков</h1>
+<div class="subtitle"><strong>DevOps / Platform Engineer</strong> | Удаленно | 200 000 ₽ на руки</div>
+<div class="contacts">
+     <a href="mailto:sadchikovsg@gmail.com">sadchikovsg@gmail.com</a> &nbsp;|&nbsp; 
+    ️ <a href="https://t.me/chill_devops">@chill_devops</a> &nbsp;|&nbsp; 
+    💻 <a href="https://github.com/sadchikovsg">github.com/sadchikovsg</a> &nbsp;|&nbsp; 
+    🌐 <a href="https://sadchikovsg.github.io">sadchikovsg.github.io</a>
+</div>
+
+<h2>🎯 Summary</h2>
+<div class="summary">
+DevOps-инженер с 4+ годами коммерческого опыта и 7-летним фундаментом в Linux/сетях. Специализируюсь на превращении хаотичных процессов в масштабируемые платформы. Умею переводить технические действия в бизнес-метрики: снижение RPO с 24ч до 5 мин, оптимизация артефактов в 40 раз, сокращение времени деплоя на 20%.
+</div>
+
+<h2>🛠 Ключевые навыки</h2>
+<table>
+    <tr><th>Область</th><th>Технологии</th></tr>
+    <tr><td><strong>Cloud & IaC</strong></td><td>Yandex Cloud (Expert), AWS, Terraform (Expert), Ansible (Expert)</td></tr>
+    <tr><td><strong>CI/CD & DevSecOps</strong></td><td>GitLab CI, Kaniko, Semgrep, Trivy, Cosign, Bash, Python</td></tr>
+    <tr><td><strong>Containers & K8s</strong></td><td>Docker (Expert), Podman rootless, Kubernetes (Managed + Homelab)</td></tr>
+    <tr><td><strong>DB & Messaging</strong></td><td>PostgreSQL, MySQL, YC Managed Kafka (HA), RabbitMQ, Redis</td></tr>
+    <tr><td><strong>Observability</strong></td><td>Prometheus, Grafana, ELK, Custom Healthchecks, Alerting</td></tr>
+</table>
+
+<h2> Опыт работы</h2>
+
+<div class="job">
+    <div class="job-header">ООО ПКО «ХАБЕР» — DevOps Engineer</div>
+    <div class="job-meta">Июль 2025 — н.в. (1 год 3 месяца)</div>
+    <ul>
+        <li><strong>Kafka HA:</strong> С нуля спроектировал отказоустойчивый кластер Managed Kafka (3 брокера, KRaft) в YC. Оптимизировал стоимость инфраструктуры в ~4 раза.</li>
+        <li><strong>PostgreSQL HA:</strong> Мигрировал прод-БД с открытого порта на Managed HA. <span class="metrics">RPO снижен с 24ч до 5 мин, RTO до 5-10 мин, SLA 99.95%</span>.</li>
+        <li><strong>DevSecOps:</strong> Полный отказ от DinD в пользу Kaniko. Внедрил пайплайн с Semgrep, Trivy, Cosign OIDC и runtime-закалку контейнеров.</li>
+    </ul>
+</div>
+
+<div class="job">
+    <div class="job-header">Проектная деятельность (Freelance) — DevOps Engineer</div>
+    <div class="job-meta">Июль 2022 — н.в. (4 года 3 месяца)</div>
+    <ul>
+        <li><strong>EdTech-платформа:</strong> Построил воспроизводимую среду (Terraform + Ansible Dynamic Inventory). <span class="metrics">Время развертывания: 2–3 дня → 10–15 минут</span>.</li>
+        <li><strong>Платформа для хакатона:</strong> Развернул GitLab CE на rootless Podman для 5 команд. <span class="metrics">Бэкап: 15 мин → 48 сек, 9.1 ГБ → 44 МБ (-99.5%)</span>.</li>
+        <li><strong>Оптимизация:</strong> ML-образ <span class="metrics">5.24 GiB → 1.23 GiB (-77%)</span>, Frontend <span class="metrics">875 MB → 22 MB (в 40 раз)</span>.</li>
+    </ul>
+</div>
+
+<div class="job">
+    <div class="job-header">Qtim — DevOps Engineer</div>
+    <div class="job-meta">Ноябрь 2024 — Июнь 2025 (8 месяцев)</div>
+    <ul>
+        <li><strong>CI/CD:</strong> Внедрил кэширование и параллельные job'ы в GitLab CI. <span class="metrics">Время деплоя сокращено на 20% (с 15 до 12 мин)</span>.</li>
+        <li><strong>Secrets Management:</strong> Развернул Infisical, заменив хранение секретов в .env и CI-переменных на централизованное хранилище.</li>
+        <li><strong>Observability:</strong> С нуля настроил Prometheus + Grafana, сократив время обнаружения инцидентов с часов до минут.</li>
+    </ul>
+</div>
+
+<div class="job">
+    <div class="job-header">Госсектор — Системный администратор → Senior</div>
+    <div class="job-meta">Январь 2015 — Июль 2022 (7 лет 7 месяцев)</div>
+    <ul>
+        <li>7+ лет администрирования гетерогенных сетей (200+ рабочих станций, 15 серверов Linux/Windows). Заложил фундамент глубокого понимания cgroups, namespaces, systemd и сетевого стека.</li>
+    </ul>
+</div>
+
+<h2>🎓 Образование</h2>
+<ul style="margin-left: 15px; font-size: 9.5pt;">
+    <li><strong>2024:</strong> Python-разработчик (Яндекс Практикум)</li>
+    <li><strong>2023:</strong> DevOps для эксплуатации и разработки (Яндекс Практикум)</li>
+    <li><strong>2008:</strong> Радиофизика и электроника, Волгоградский государственный университет</li>
+</ul>
+
+</body>
+</html>
