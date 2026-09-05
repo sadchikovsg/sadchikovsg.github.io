@@ -101,3 +101,10 @@ td {
   color: #666666;
   font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace;
 }
+
+// Улучшение контраста активного пункта меню
+.nav-list-item.active > .nav-list-link {
+  background-color: #1a1a1a !important;
+  color: #7dd356 !important;
+  font-weight: bold;
+}
