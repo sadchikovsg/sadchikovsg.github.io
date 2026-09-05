@@ -12,7 +12,7 @@ nav_order: 3
 
 ## 🎯 Summary
 
-DevOps/Platform Engineer с **4+ годами коммерческого опыта** в построении отказоустойчивой инфраструктуры, автоматизации CI/CD и внедрении DevSecOps-практик, подкрепленными **7-летним фундаментом** в системном администрировании Linux и сетей.
+DevOps/Platform Engineer с **4+ годами коммерческого опыта** в построении отказоустойчивой инфраструктуры, автоматизации CI/CD и внедрении DevSecOps-практик, подкрепленными  **7-летним фундаментом** в системном администрировании Linux и сетей.
 
 Специализируюсь на трансформации хаотичных процессов в предсказуемые, масштабируемые платформы. Умею переводить технические задачи на язык бизнес-метрик: снижение RPO с 24 часов до 5 минут, уменьшение размера артефактов в 40 раз, сокращение времени деплоя на 20%.
 
@@ -32,6 +32,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 ##  Ключевые навыки
 
 ### Cloud & Infrastructure
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **Yandex Cloud** | Expert | Cloud VPS, Managed PostgreSQL/Kafka, S3, VPC, Security Groups |
@@ -40,6 +41,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **Ansible** | Expert | Dynamic Inventory, CI/CD Pipeline, идемпотентная настройка серверов |
 
 ### CI/CD & Automation
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **GitLab CI / Self-Managed** | Expert | Пайплайны с Kaniko, reusable templates, masked variables, оптимизация бэкапов |
@@ -47,6 +49,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **Bash / Python** | Expert | Скрипты миграции, бэкапов, sync-скрипты Terraform→Ansible, healthchecks, email-уведомления |
 
 ### Containers & Orchestration
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **Docker** | Expert | Multi-stage builds, Docker Context, security hardening (`cap_drop`, `no-new-privileges`) |
@@ -54,6 +57,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **Kubernetes** | Basic/In Progress | Yandex Managed K8s (Ingress NGINX, Deep Links), Homelab-кластер (в активной фазе) |
 
 ### Networking & Security
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **Traefik / Nginx** | Expert | Reverse proxy, Auto-TLS, маршрутизация, ACL, iOS Deep Links |
@@ -62,6 +66,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **DNS** | Advanced | Аудит зависимостей, миграция NS-записей, TTL/MX/SPF/DKIM |
 
 ### Databases, Messaging & Storage
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **PostgreSQL / MySQL** | Expert | Миграции с верификацией (~7 млн строк), `pg_dump`, бэкапы, настройка реплик, HA-кластеры |
@@ -72,6 +77,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **S3** | Advanced | Хранение бэкапов, Restic repository, Bucket Policies, изоляция данных |
 
 ### Observability & SRE
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **Prometheus + Grafana** | Advanced | Мониторинг HTTP latency, error rate, saturation; дашборды, алерты в Telegram |
@@ -223,6 +229,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 
 Поскольку в последних коммерческих проектах доминировали VPS и Managed-сервисы, я целенаправленно развиваю навыки работы с оркестрацией и новыми типами workload'ов в собственном лабораторном окружении.
 
+
 | Технология | Статус | Что реализую / Изучаю |
 |:---|:---|:---|
 | **Kubernetes (K8s)** | В активной фазе | Развертывание HA-кластера на собственном железе. Изучение архитектуры (Control Plane, etcd, CNI, CSI). |
@@ -249,7 +256,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 ## 📬 Контакты
 
 - **Telegram:** [@chill_devops](https://t.me/chill_devops)
-- **Email:** sadchikovsg@gmail.com
+- **Email:** [sadchikovsg@gmail.com](mailto:sadchikovsg@gmail.com)
 - **GitHub:** [github.com/sadchikovsg](https://github.com/sadchikovsg)
 - **Портфолио:** [sadchikovsg.github.io](https://sadchikovsg.github.io)
 
