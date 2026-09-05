@@ -4,7 +4,7 @@ layout: page
 nav_order: 3
 ---
 
-#  Скачать резюме
+# 📄 Скачать резюме
 
 [⬇️ Скачать CV в формате PDF](/assets/CV_Sadchikovsg_DevOps.pdf){: .btn .btn-primary }
 
@@ -30,7 +30,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 - Мигрировал критическую инфраструктуру PostgreSQL HA: **RTO до 5-10 минут**, SLA **99.95%**
 - Оптимизировал Docker-образы: ML-образ **5.24 GiB → 1.23 GiB (-77%)**, Frontend **875 MB → 22 MB (в 40 раз)**
 
-**Портфолио:** [sadchikovsg.github.io](https://sadchikovsg.github.io) (4 детальных кейса с архитектурными схемами)  
+**Портфолио:** [sadchikovsg.ru](https://sadchikovsg.ru) (4 детальных кейса с архитектурными схемами)  
 **GitHub:** [github.com/sadchikovsg](https://github.com/sadchikovsg) (Homelab K8s, AI Harness, Ansible roles)
 
 ---
@@ -38,6 +38,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 ## 🔧 Ключевые навыки
 
 ### Cloud & Infrastructure
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **Yandex Cloud** | Expert | Cloud VPS, Managed PostgreSQL/Kafka, S3, VPC, Security Groups |
@@ -46,6 +47,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **Ansible** | Expert | Dynamic Inventory, CI/CD Pipeline, идемпотентная настройка серверов |
 
 ### CI/CD & Automation
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **GitLab CI / Self-Managed** | Expert | Пайплайны с Kaniko, reusable templates, masked variables, оптимизация бэкапов |
@@ -53,6 +55,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **Bash / Python** | Expert | Скрипты миграции, бэкапов, sync-скрипты Terraform→Ansible, healthchecks, email-уведомления |
 
 ### Containers & Orchestration
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **Docker** | Expert | Multi-stage builds, Docker Context, security hardening (`cap_drop`, `no-new-privileges`) |
@@ -60,6 +63,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **Kubernetes** | Basic/In Progress | Yandex Managed K8s (Ingress NGINX, Deep Links), Homelab-кластер (в активной фазе) |
 
 ### Networking & Security
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **Traefik / Nginx** | Expert | Reverse proxy, Auto-TLS, маршрутизация, ACL, iOS Deep Links |
@@ -68,6 +72,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **DNS** | Advanced | Аудит зависимостей, миграция NS-записей, TTL/MX/SPF/DKIM |
 
 ### Databases, Messaging & Storage
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **PostgreSQL / MySQL** | Expert | Миграции с верификацией (~7 млн строк), `pg_dump`, бэкапы, настройка реплик, HA-кластеры |
@@ -78,6 +83,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 | **S3** | Advanced | Хранение бэкапов, Restic repository, Bucket Policies, изоляция данных |
 
 ### Observability & SRE
+
 | Технология | Уровень | Опыт применения |
 |:---|:---|:---|
 | **Prometheus + Grafana** | Advanced | Мониторинг HTTP latency, error rate, saturation; дашборды, алерты в Telegram |
@@ -87,7 +93,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 
 ---
 
-##  Опыт работы
+## 💼 Опыт работы
 
 ### Июль 2025 — настоящее время (1 год 3 месяца)
 **ООО ПКО «ХАБЕР»** | DevOps Engineer (Проектная деятельность)
@@ -257,7 +263,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 - **Telegram:** [@chill_devops](https://t.me/chill_devops)
 - **Email:** [sadchikovsg@gmail.com](mailto:sadchikovsg@gmail.com)
 - **GitHub:** [github.com/sadchikovsg](https://github.com/sadchikovsg)
-- **Портфолио:** [sadchikovsg.github.io](https://sadchikovsg.github.io)
+- **Портфолио:** [sadchikovsg.ru](https://sadchikovsg.ru)
 
 ---
 
