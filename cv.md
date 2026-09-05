@@ -1,5 +1,10 @@
 ---
 title: Резюме
+
+# 📄 Скачать резюме
+
+[⬇️ Скачать CV в формате PDF](/assets/CV_Sadchikovsg_DevOps.pdf){: .btn .btn-primary }
+
 layout: page
 nav_order: 3
 ---
