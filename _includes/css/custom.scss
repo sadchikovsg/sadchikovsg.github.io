@@ -1,61 +1,18 @@
-// Hacker Theme - Navigation Contrast Fix
+// Hacker Theme - Active Nav Item Fix
 
-// Заголовок сайта
-.site-title {
-  color: #5fb13b !important;
-  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
-  font-weight: bold !important;
-}
-
-// Все заголовки
-h1, h2, h3, h4, h5, h6 {
-  color: #5fb13b !important;
-}
-
-// Навигация: все ссылки
-.nav-list-link {
-  color: #5fb13b !important;
-  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
-}
-
-.nav-list-link:hover {
-  color: #7dd356 !important;
-  background-color: #2a2a2a !important;
-}
-
-// АКТИВНЫЙ ПУНКТ МЕНЮ - максимальный контраст
+// АКТИВНЫЙ ПУНКТ МЕНЮ - максимальная специфичность
+.site-nav .nav-list .nav-list-item.active > .nav-list-link,
+.nav-list .nav-list-item.active > .nav-list-link,
 .nav-list-item.active > .nav-list-link {
-  color: #ffffff !important;  // Белый текст для максимального контраста
-  background-color: #0a0a0a !important;  // Очень темный фон
+  color: #5fb13b !important;
+  background-color: #1a1a1a !important;
   font-weight: bold !important;
   border-left: 4px solid #5fb13b !important;
-  padding-left: 12px !important;
+  padding-left: 8px !important;
 }
 
-// Вложенные пункты меню
-.nav-list .nav-list-item .nav-list-link {
+// Вложенные активные пункты
+.site-nav .nav-list .nav-list .nav-list-item.active > .nav-list-link {
   color: #5fb13b !important;
-}
-
-// Код
-code, pre {
-  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
-}
-
-// Таблицы
-th {
-  background-color: #242424 !important;
-  color: #5fb13b !important;
-}
-
-// Кнопки
-.btn-primary {
-  background-color: #5fb13b !important;
-  color: #1c1c1c !important;
-}
-
-// Footer
-.site-footer {
-  color: #666666 !important;
-  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+  background-color: #1a1a1a !important;
 }
