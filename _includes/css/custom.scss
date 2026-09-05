@@ -1,0 +1,68 @@
+// Hacker Theme - Complete Custom Styles
+
+// === ЗАГОЛОВОК САЙТА (фикс обрезки и переноса) ===
+.site-title {
+  color: #5fb13b !important;
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+  font-weight: bold !important;
+  font-size: 1rem !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.3 !important;
+  word-break: break-all !important;
+}
+
+// === ЗАГОЛОВКИ РАЗДЕЛОВ ===
+h1, h2, h3, h4, h5, h6 {
+  color: #5fb13b !important;
+}
+
+// === НАВИГАЦИЯ ===
+.nav-list-link {
+  color: #5fb13b !important;
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+}
+
+.nav-list-link:hover {
+  color: #7dd356 !important;
+  background-color: #2a2a2a !important;
+}
+
+// Активный пункт меню (без градиента!)
+.nav-list-item.active > .nav-list-link {
+  color: #5fb13b !important;
+  background-color: #1a1a1a !important;
+  background-image: none !important;
+  font-weight: bold !important;
+  border-left: 4px solid #5fb13b !important;
+  padding-left: 12px !important;
+}
+
+// Вложенные пункты меню
+.nav-list .nav-list-item .nav-list-link {
+  color: #5fb13b !important;
+}
+
+// === КОД ===
+code, pre {
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+}
+
+// === ТАБЛИЦЫ ===
+th {
+  background-color: #242424 !important;
+  color: #5fb13b !important;
+}
+
+// === КНОПКИ ===
+.btn-primary {
+  background-color: #5fb13b !important;
+  color: #1c1c1c !important;
+}
+
+// === FOOTER ===
+.site-footer {
+  color: #666666 !important;
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+}
