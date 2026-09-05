@@ -1,0 +1,103 @@
+// Hacker Theme - Navigation & Readability Fixes
+
+// Заголовок сайта в сайдбаре
+.site-title {
+  color: #5fb13b !important;
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Все заголовки h1, h2, h3
+h1, h2, h3, h4, h5, h6 {
+  color: #5fb13b !important;
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace;
+}
+
+// Моноширинный шрифт для всего текста
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+// Код и блоки кода
+code, pre {
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+}
+
+// === НАВИГАЦИЯ: ВСЕ УРОВНИ ===
+
+// Основные пункты меню
+.nav-list-link {
+  color: #5fb13b !important;
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 2px 0;
+}
+
+.nav-list-link:hover {
+  color: #7dd356 !important;
+  background-color: #2a2a2a;
+}
+
+// Вложенные пункты меню (КРИТИЧНО: переопределяем дефолтный серый)
+.nav-list .nav-list-item .nav-list-link,
+.nav-list .nav-list .nav-list-link {
+  color: #5fb13b !important;
+}
+
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list .nav-list-link:hover {
+  color: #7dd356 !important;
+  background-color: #2a2a2a;
+}
+
+// Активный элемент навигации (любого уровня)
+.nav-list-item.active > .nav-list-link,
+.nav-list .nav-list-item.active > .nav-list-link {
+  color: #5fb13b !important;
+  background-color: #2a2a2a !important;
+  font-weight: bold;
+  border-left: 3px solid #5fb13b;
+}
+
+// Блоки кода с подсветкой
+.highlight {
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+}
+
+// Таблицы
+table {
+  border: 1px solid #444444;
+}
+
+th {
+  background-color: #242424;
+  color: #5fb13b;
+  border: 1px solid #444444;
+}
+
+td {
+  border: 1px solid #444444;
+  color: #c9c9c9;
+}
+
+// Кнопки
+.btn {
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace;
+  border: 1px solid #5fb13b;
+  color: #5fb13b;
+}
+
+.btn-primary {
+  background-color: #5fb13b;
+  color: #1c1c1c;
+}
+
+// Footer
+.site-footer {
+  color: #666666;
+  font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace;
+}
