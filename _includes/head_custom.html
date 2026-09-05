@@ -1,5 +1,5 @@
 <style>
-  /* === ЗАГОЛОВОК САЙТА (компактный, без переносов) === */
+  /* === ЗАГОЛОВОК САЙТА === */
   .site-title {
     color: #5fb13b !important;
     font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
@@ -7,7 +7,6 @@
     font-size: 0.9rem !important;
     line-height: 1.2 !important;
     word-break: break-word !important;
-    white-space: normal !important;
   }
 
   /* === ВСЕ ЗАГОЛОВКИ === */
@@ -15,10 +14,9 @@
     color: #5fb13b !important;
   }
 
-  /* === НАВИГАЦИЯ: ОСНОВНЫЕ ПУНКТЫ (зеленые) === */
+  /* === НАВИГАЦИЯ: ОСНОВНЫЕ ПУНКТЫ (всегда зеленые) === */
   .site-nav > .nav-list > .nav-list-item > .nav-list-link {
     color: #5fb13b !important;
-    font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
   }
 
   .site-nav > .nav-list > .nav-list-item > .nav-list-link:hover {
@@ -26,11 +24,10 @@
     background-color: #2a2a2a !important;
   }
 
-  /* === НАВИГАЦИЯ: ВЛОЖЕННЫЕ ПУНКТЫ (синие) === */
+  /* === НАВИГАЦИЯ: ВСЕ ВЛОЖЕННЫЕ ПУНКТЫ (всегда синие) === */
   .site-nav .nav-list .nav-list .nav-list-link,
   .nav-list .nav-list-item .nav-list-link {
     color: #3b82f6 !important;
-    font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
   }
 
   .site-nav .nav-list .nav-list .nav-list-link:hover,
@@ -39,17 +36,24 @@
     background-color: #2a2a2a !important;
   }
 
-  /* === АКТИВНЫЙ ПУНКТ МЕНЮ (БЕЗ ГРАДИЕНТА) === */
+  /* === АКТИВНЫЙ ПОДПУНКТ (синий текст + темный фон + полоса) === */
   .site-nav .nav-list .nav-list-item.active > .nav-list-link,
-  .nav-list .nav-list-item.active > .nav-list-link,
-  .nav-list-item.active > .nav-list-link {
-    color: #5fb13b !important;
-    background: #1a1a1a !important;
+  .nav-list .nav-list-item.active > .nav-list-link {
+    color: #3b82f6 !important;
     background-color: #1a1a1a !important;
-    background-image: none !important; /* УБИРАЕМ ГРАДИЕНТ */
+    background-image: none !important;
     font-weight: bold !important;
-    border-left: 4px solid #5fb13b !important;
-    padding-left: 12px !important;
+    border-left: 3px solid #3b82f6 !important;
+    padding-left: 10px !important;
+  }
+
+  /* === АКТИВНЫЙ ОСНОВНОЙ ПУНКТ (зеленый текст + темный фон + полоса) === */
+  .site-nav > .nav-list > .nav-list-item.active > .nav-list-link {
+    color: #5fb13b !important;
+    background-color: #1a1a1a !important;
+    background-image: none !important;
+    font-weight: bold !important;
+    border-left: 3px solid #5fb13b !important;
   }
 
   /* === КОД И ТАБЛИЦЫ === */
