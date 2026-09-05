@@ -15,16 +15,27 @@
     color: #5fb13b !important;
   }
 
-  /* === НАВИГАЦИЯ: ВСЕ ПУНКТЫ === */
-  .site-nav .nav-list-link,
-  .nav-list-link {
+  /* === НАВИГАЦИЯ: ОСНОВНЫЕ ПУНКТЫ (зеленые) === */
+  .site-nav > .nav-list > .nav-list-item > .nav-list-link {
     color: #5fb13b !important;
     font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
   }
 
-  .site-nav .nav-list-link:hover,
-  .nav-list-link:hover {
+  .site-nav > .nav-list > .nav-list-item > .nav-list-link:hover {
     color: #7dd356 !important;
+    background-color: #2a2a2a !important;
+  }
+
+  /* === НАВИГАЦИЯ: ВЛОЖЕННЫЕ ПУНКТЫ (синие) === */
+  .site-nav .nav-list .nav-list .nav-list-link,
+  .nav-list .nav-list-item .nav-list-link {
+    color: #3b82f6 !important;
+    font-family: "SFMono-Regular", Menlo, Consolas, Monaco, monospace !important;
+  }
+
+  .site-nav .nav-list .nav-list .nav-list-link:hover,
+  .nav-list .nav-list-item .nav-list-link:hover {
+    color: #60a5fa !important;
     background-color: #2a2a2a !important;
   }
 
