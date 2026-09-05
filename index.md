@@ -27,3 +27,4 @@ permalink: /
 
 [Смотреть технологический стек](stack){: .btn .btn-primary }
 [Изучить кейсы и проекты](projects){: .btn }
+[Связаться в Telegram](https://t.me/chill_devops){: .btn }
