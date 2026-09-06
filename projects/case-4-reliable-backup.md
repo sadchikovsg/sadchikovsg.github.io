@@ -30,7 +30,30 @@ parent: Кейсы и проекты
 
 ### 3. Идемпотентная автоматизация через Ansible
 - Создана роль `restic_backup` в строгом корпоративном стиле: использование FQCN (`ansible.builtin.*`), разделение задач по файлам, `no_log: true` для чувствительных данных.
-- **Траблшутинг Systemd:** Решена проблема запуска user-level таймеров без прав root. Поскольку стандартный модуль `systemd` терял контекст сессии при `become: yes`, активация выполнена через `ansible.builtin.shell` с явной передачей переменных окружения `XDG_RUNTIME_DIR` и `DBUS_SESSION_BUS_ADDRESS`.
+
+#### 3.1. User-level systemd timer: обходной манёвр Ansible
+
+**Baseline:** Бэкапы должны запускаться по расписанию без прав root — через user-level systemd timer пользователя `deployer`. Но стандартный модуль `ansible.builtin.systemd` с `become_user` + `scope:user` не работает в этой схеме.
+
+**Аудит и инсайт:** Модуль `systemd` обращается к D-Bus через `DBUS_SESSION_BUS_ADDRESS`. При sudo-become эта переменная недоступна — systemd user bus слушает на `/run/user/<UID>/bus`, который монтируется только при PAM-логине. Единственный надёжный способ — shell с явной передачей переменных окружения.
+
+**Решение — активация таймера через shell (тот же обходной манёвр, что в кейсе 3 для rootless Podman):**
+
+```yaml
+- name: Enable and start restic-backup.timer via shell (user-level)
+  ansible.builtin.shell: |
+    systemctl --user daemon-reload
+    systemctl --user enable {{ restic_backup_service_name }}.timer
+    systemctl --user start {{ restic_backup_service_name }}.timer
+  become: yes
+  become_user: "{{ ssh_user }}"
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ deployer_uid }}"
+    DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ deployer_uid }}/bus"
+  changed_when: true
+```
+
+Этот паттерн (shell + явная передача `XDG_RUNTIME_DIR` и `DBUS_SESSION_BUS_ADDRESS`) впервые был отработан при активации rootless Podman socket в кейсе 3 и здесь применён как уже проверенное решение — без повторного траблшутинга.
 
 ### 4. Умная ротация и предотвращение "раздувания" хранилища
 - **Проблема S3:** Restic считал каждую staging-директорию с уникальным timestamp новым путем, создавая дубликаты.
