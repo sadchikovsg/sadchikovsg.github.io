@@ -1,11 +1,10 @@
 <style>
-  /* Стили для мобильной навигации в футере */
   .mobile-nav-footer {
     margin-top: 2.5rem;
     padding-top: 1rem;
     border-top: 1px solid #444;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
@@ -13,17 +12,22 @@
   .mobile-nav-footer .btn {
     font-size: 0.85rem !important;
     padding: 8px 12px !important;
-    flex: 1;
-    text-align: center;
-    min-width: 120px;
   }
-  /* Плавная прокрутка для всей страницы */
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 </style>
 
 <div class="mobile-nav-footer">
-  <a href="/" class="btn">🏠 На главную</a>
+  {% unless page.url == "/" %}
+  <a href="{{ '/' | relative_url }}" class="btn">🏠 Главная</a>
+  {% endunless %}
+  {% unless page.url contains "/stack" %}
+  <a href="{{ '/stack' | relative_url }}" class="btn">🛠 Стек</a>
+  {% endunless %}
+  {% unless page.url contains "/projects" %}
+  <a href="{{ '/projects' | relative_url }}" class="btn">📂 Кейсы</a>
+  {% endunless %}
+  {% unless page.url contains "/cv" %}
+  <a href="{{ '/cv' | relative_url }}" class="btn">📄 Резюме</a>
+  {% endunless %}
   <a href="#" class="btn">↑ Наверх</a>
 </div>
