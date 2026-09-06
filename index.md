@@ -26,3 +26,4 @@ permalink: /
 Сегодня я применяю этот фундамент для построения современных Cloud Native решений, делая инфраструктуру не просто работающей, но и экономически эффективной, безопасной и простой в поддержке.
 
 [Связаться в Telegram](https://t.me/chill_devops){: .btn .btn-primary }
+[⬇️ Скачать CV (PDF)](/assets/CV_Sadchikovsg_DevOps.pdf){: .btn .cv-dl-mobile }
