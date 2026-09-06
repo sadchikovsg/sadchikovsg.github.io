@@ -9,7 +9,7 @@ parent: Кейсы и проекты
 
 **Роль:** DevOps / Platform Engineer  
 **Длительность:** ~83 часа (полный цикл: от проектирования до поддержки в проде и демонтажа)  
-**Стек:** GitLab Self-Managed, Podman (rootless), Traefik, Terraform, Ansible, Bash.
+**Стек:** GitLab Self-Managed, Podman (rootless), Traefik, Terraform, Ansible, Bash, systemd.
 
 ## 🎯 Проблема и Контекст (Baseline)
 Необходимо было предоставить 5 изолированным командам надежную среду для 2-дневного хакатона (стек: .NET, React, Telegram-боты, SQLite/PostgreSQL). 
@@ -31,7 +31,41 @@ parent: Кейсы и проекты
 ### 3. Глубокий траблшутинг и изоляция
 - **Критический инцидент:** Во время мероприятия несколько команд случайно подключались к чужим базам данных, так как использовали общее имя сервиса `postgres` в общей сети Podman.
 - **Решение:** Логика генерации переменных перенесена в скрипт `deploy-remote.sh`. Теперь при каждом деплое скрипт автоматически формирует и пробрасывает в контейнер **уникальные** переменные окружения (например, `DB_HOST=team-2-hackathon-backend-postgres`), полностью исключая ручной ввод и коллизии.
-- Вся платформа развернута на **rootless Podman**: исполнение контейнерного движка без root-прав снижает attack surface на общем сервере мероприятия. Сетевое изолирование и ACL-фиксы сокетов (через systemd drop-in) применены как часть этой модели.
+
+#### 3.1. Rootless Podman и ACL-траблшутинг для GitLab Runner
+
+Вся платформа развернута на **rootless Podman**: исполнение контейнерного движка без root-прав снижает attack surface на общем сервере мероприятия. Но это создало нетривиальную проблему доступа GitLab Runner к сокету Podman.
+
+**Baseline:** GitLab Runner (docker executor) должен был подключаться к rootless сокету Podman пользователя `deployer` (`/run/user/<UID>/podman/podman.sock`). Решение через `setfacl -m u:gitlab-runner:rw` работало до первой перезагрузки сервера — после неё сокет пересоздавался, и ACL терялся.
+
+**Аудит и инсайт:** Нужно автоматическое восстановление ACL при каждой активации сокета. Логичное решение — systemd drop-in. Но placement имеет значение:
+- `podman.socket.d/` — **не работает**: `podman.socket` это `.socket` unit, секция `[Service]` с `ExecStartPost` в нём недопустима и молча игнорируется systemd с варнингом «Unknown section 'Service'».
+- `podman.service.d/` — **работает**: socket-activation при первом подключении запускает `podman.service`, и `ExecStartPost` выполняется после старта — в этот момент сокет-файл уже создан и ACL можно установить.
+
+**Решение — drop-in конфиг `~/.config/systemd/user/podman.service.d/acl-fix.conf`:**
+
+```ini
+# Drop-in: автоматическое восстановление ACL при каждой активации podman.socket
+# %t раскрывается в /run/user/<UID> (XDG_RUNTIME_DIR пользователя)
+[Service]
+ExecStartPost=/usr/bin/setfacl -m u:gitlab-runner:rw %t/podman/podman.sock
+```
+
+**Активация user-level сокета через Ansible:** стандартный модуль `ansible.builtin.systemd` с `become_user` + `scope:user` обращается к D-Bus через `DBUS_SESSION_BUS_ADDRESS`, но при sudo-become эта переменная недоступна — systemd user bus слушает на `/run/user/<UID>/bus`, который монтируется только при PAM-логине. Единственный надёжный способ — shell с явной передачей переменных окружения:
+
+```yaml
+- name: Enable and start rootless podman.socket for deployer via shell
+  ansible.builtin.shell: |
+    systemctl --user enable podman.socket
+    systemctl --user start podman.socket
+  become: true
+  become_user: deployer
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ deployer_uid }}"
+    DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ deployer_uid }}/bus"
+```
+
+Этот же обходной манёвр (shell + явная передача сессионных переменных) применён позже в Ansible-роли для Restic (см. Кейс 4).
 
 ### 4. Оптимизация и надежность самой платформы
 - **Аудит бэкапов:** выявлены два root-cause роста архивов до 9.1 ГБ — архивация Container Registry и баг `GITLAB_OMNIBUS_CONFIG` (параметры не сохранялись при перезапуске).
@@ -44,6 +78,7 @@ parent: Кейсы и проекты
 | **Изоляция и стабильность** | 5 команд работали параллельно без сетевых коллизий и взаимного влияния. |
 | **Управляемость** | 0 изменений кода пайплайна со стороны наставников; все настройки через CI-переменные. |
 | **Оптимизация платформы** | Аудит бэкапов: устранены оба root-cause (архивация Registry, баг omnibus-конфига): размер **~9.1 ГБ → 44 МБ** (~200 раз), время 15 мин → 48 сек. |
+| **Rootless-доступ GitLab Runner** | Решена проблема потери ACL на сокете Podman после перезагрузки через systemd drop-in в `podman.service.d/` (не в `podman.socket.d/` — там `[Service]` игнорируется). |
 | **Безопасность** | Rootless-исполнение, автоматическая очистка ресурсов после мероприятия (полный демонтаж через Terraform). |
 
 ## 🏗 Архитектура платформы
