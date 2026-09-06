@@ -44,15 +44,15 @@
 <h1>Сергей Садчиков</h1>
 <div class="subtitle"><strong>DevOps / Platform Engineer</strong> | Удаленно | 200 000 ₽ на руки</div>
 <div class="contacts">
-     <a href="mailto:sadchikovsg@gmail.com">sadchikovsg@gmail.com</a> &nbsp;|&nbsp; 
-    ️ <a href="https://t.me/chill_devops">@chill_devops</a> &nbsp;|&nbsp; 
-    💻 <a href="https://github.com/sadchikovsg">github.com/sadchikovsg</a> &nbsp;|&nbsp; 
+    📧 <a href="mailto:sadchikovsg@gmail.com">sadchikovsg@gmail.com</a> &nbsp;|&nbsp;
+    ✈️ <a href="https://t.me/chill_devops">@chill_devops</a> &nbsp;|&nbsp;
+    💻 <a href="https://github.com/sadchikovsg">github.com/sadchikovsg</a> &nbsp;|&nbsp;
     🌐 <a href="https://sadchikovsg.ru">sadchikovsg.ru</a>
 </div>
 
 <h2>🎯 Summary</h2>
 <div class="summary">
-DevOps-инженер с 4+ годами коммерческого опыта и 7-летним фундаментом в Linux/сетях. Специализируюсь на превращении хаотичных процессов в масштабируемые платформы. Умею переводить технические действия в бизнес-метрики: снижение RPO с 24ч до 5 мин, оптимизация артефактов в 40 раз, сокращение времени деплоя на 20%.
+DevOps-инженер с 4+ годами коммерческого опыта и 7-летним фундаментом в системном администрировании Linux и сетей. Перевожу технические задачи на язык бизнес-метрик через конкретные инженерные решения: перевод прод-БД на Managed PostgreSQL HA (RPO 24ч → 5 мин), аудит бэкапов GitLab (9.1 ГБ → 44 МБ), оптимизация Docker-образов (до 40 раз).
 </div>
 
 <h2>🛠 Ключевые навыки</h2>
@@ -61,19 +61,19 @@ DevOps-инженер с 4+ годами коммерческого опыта �
     <tr><td><strong>Cloud & IaC</strong></td><td>Yandex Cloud (Expert), AWS, Terraform (Expert), Ansible (Expert)</td></tr>
     <tr><td><strong>CI/CD & DevSecOps</strong></td><td>GitLab CI, Kaniko, Semgrep, Trivy, Cosign, Bash, Python</td></tr>
     <tr><td><strong>Containers & K8s</strong></td><td>Docker (Expert), Podman rootless, Kubernetes (Managed + Homelab)</td></tr>
-    <tr><td><strong>DB & Messaging</strong></td><td>PostgreSQL, MySQL, YC Managed Kafka (HA), RabbitMQ, Redis</td></tr>
+    <tr><td><strong>DB & Messaging</strong></td><td>PostgreSQL, MySQL, YC Managed Kafka (HA), RabbitMQ, Redis, Restic</td></tr>
     <tr><td><strong>Observability</strong></td><td>Prometheus, Grafana, ELK, Custom Healthchecks, Alerting</td></tr>
 </table>
 
-<h2> Опыт работы</h2>
+<h2>💼 Опыт работы</h2>
 
 <div class="job">
     <div class="job-header">ООО ПКО «ХАБЕР» — DevOps Engineer</div>
     <div class="job-meta">Июль 2025 — н.в. (1 год 3 месяца)</div>
     <ul>
-        <li><strong>Kafka HA:</strong> С нуля спроектировал отказоустойчивый кластер Managed Kafka (3 брокера, KRaft) в YC. Оптимизировал стоимость инфраструктуры в ~4 раза.</li>
-        <li><strong>PostgreSQL HA:</strong> Мигрировал прод-БД с открытого порта на Managed HA. <span class="metrics">RPO снижен с 24ч до 5 мин, RTO до 5-10 мин, SLA 99.95%</span>.</li>
-        <li><strong>DevSecOps:</strong> Полный отказ от DinD в пользу Kaniko. Внедрил пайплайн с Semgrep, Trivy, Cosign OIDC и runtime-закалку контейнеров.</li>
+        <li><strong>Kafka HA:</strong> Спроектировал и развернул кластер Managed Kafka (3 брокера, KRaft) в YC. Обосновал выбор network-hdd вместо network-ssd под паттерны нагрузки: <span class="metrics">стоимость инфраструктуры снижена в ~4 раза</span>.</li>
+        <li><strong>PostgreSQL HA:</strong> Перевел прод-БД с незащищенной ВМ (открытый порт 0.0.0.0:5432) на Managed HA с PITR. <span class="metrics">Бизнес-RPO снижен с 24ч до 5 мин, RTO до 5-10 мин, SLA 99.95%</span>.</li>
+        <li><strong>DevSecOps:</strong> Полный отказ от DinD в пользу Kaniko (сборка без привилегированного доступа). Пайплайн с Semgrep, Trivy, Cosign OIDC и runtime-закалкой контейнеров.</li>
     </ul>
 </div>
 
@@ -81,9 +81,9 @@ DevOps-инженер с 4+ годами коммерческого опыта �
     <div class="job-header">Проектная деятельность (Freelance) — DevOps Engineer</div>
     <div class="job-meta">Июль 2022 — н.в. (4 года 3 месяца)</div>
     <ul>
-        <li><strong>EdTech-платформа:</strong> Построил воспроизводимую среду (Terraform + Ansible Dynamic Inventory). <span class="metrics">Время развертывания: 2–3 дня → 10–15 минут</span>.</li>
-        <li><strong>Платформа для хакатона:</strong> Развернул GitLab CE на rootless Podman для 5 команд. <span class="metrics">Бэкап: 15 мин → 48 сек, 9.1 ГБ → 44 МБ (-99.5%)</span>.</li>
-        <li><strong>Оптимизация:</strong> ML-образ <span class="metrics">5.24 GiB → 1.23 GiB (-77%)</span>, Frontend <span class="metrics">875 MB → 22 MB (в 40 раз)</span>.</li>
+        <li><strong>EdTech-платформа:</strong> Воспроизводимая среда (модульный Terraform + Ansible Dynamic Inventory). <span class="metrics">Время развертывания: 2–3 дня → 10–15 минут</span>; миграция БД с верификацией ~250 000 строк.</li>
+        <li><strong>Платформа для хакатона:</strong> GitLab CE на rootless Podman для 5 команд. Аудит бэкапов GitLab: выявлены 2 root-cause (архивация Registry, баг omnibus-конфига), кэш исключен из контура: <span class="metrics">9.1 ГБ → 44 МБ, 15 мин → 48 сек</span>.</li>
+        <li><strong>Оптимизация артефактов:</strong> ML-образ <span class="metrics">5.24 GiB → 1.23 GiB (-77%)</span> (PyTorch GPU → CPU, фильтрация CUDA-зависимостей); Frontend <span class="metrics">875 MB → 22 MB (в 40 раз)</span> через multi-stage build.</li>
     </ul>
 </div>
 
@@ -91,9 +91,9 @@ DevOps-инженер с 4+ годами коммерческого опыта �
     <div class="job-header">Qtim — DevOps Engineer</div>
     <div class="job-meta">Ноябрь 2024 — Июнь 2025 (8 месяцев)</div>
     <ul>
-        <li><strong>CI/CD:</strong> Внедрил кэширование и параллельные job'ы в GitLab CI. <span class="metrics">Время деплоя сокращено на 20% (с 15 до 12 мин)</span>.</li>
-        <li><strong>Secrets Management:</strong> Развернул Infisical, заменив хранение секретов в .env и CI-переменных на централизованное хранилище.</li>
-        <li><strong>Observability:</strong> С нуля настроил Prometheus + Grafana, сократив время обнаружения инцидентов с часов до минут.</li>
+        <li><strong>CI/CD:</strong> Кэширование, параллельные job'ы и auto-cancel в GitLab CI. <span class="metrics">Время деплоя сокращено на 20% (с 15 до 12 мин)</span>.</li>
+        <li><strong>Secrets Management:</strong> Развернул Infisical, заменив хранение секретов в .env и CI-переменных на централизованное хранилище с аудитом и ротацией.</li>
+        <li><strong>Observability:</strong> Настроил Prometheus + Grafana с нуля, сократив время обнаружения инцидентов с часов до минут.</li>
     </ul>
 </div>
 
@@ -101,7 +101,7 @@ DevOps-инженер с 4+ годами коммерческого опыта �
     <div class="job-header">Госсектор — Системный администратор → Senior</div>
     <div class="job-meta">Январь 2015 — Июль 2022 (7 лет 7 месяцев)</div>
     <ul>
-        <li>7+ лет администрирования гетерогенных сетей (200+ рабочих станций, 15 серверов Linux/Windows). Заложил фундамент глубокого понимания cgroups, namespaces, systemd и сетевого стека.</li>
+        <li>7+ лет администрирования гетерогенных сетей (200+ рабочих станций, 15 серверов Linux/Windows). Фундамент глубокого понимания cgroups, namespaces, systemd и сетевого стека.</li>
     </ul>
 </div>
 
