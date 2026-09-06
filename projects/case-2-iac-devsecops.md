@@ -9,7 +9,7 @@ parent: Кейсы и проекты
 
 **Роль:** DevOps / Platform Engineer  
 **Длительность:** ~176 часов (полный цикл: от миграции репозиториев до Production Ready)  
-**Стек:** Terraform, Ansible, GitLab CI, Kaniko, Managed PostgreSQL, S3, Phase (Secrets Management), Docker, uv, Bash.
+**Стек:** Terraform, Ansible, GitLab CI, Kaniko, Managed PostgreSQL, S3, Phase (Secrets Management), Docker, uv, Bash, Python.
 
 ## 🎯 Проблема и Контекст (Baseline)
 Продуктовый проект в сфере онлайн-образования работал на VPS с ручным деплоем через low-code PaaS (Dokploy). 
@@ -44,9 +44,9 @@ parent: Кейсы и проекты
 
 **Решение:**
 - **Замена PyTorch:** GPU-версия заменена на CPU-версию через `pip install --index-url https://download.pytorch.org/whl/cpu` (официальная рекомендация PyTorch для CPU-only сред).
-- **Фильтрация зависимостей:** Написал Python-скрипт для фильтрации `torch`, `torchvision`, `triton`, `nvidia-*`, `cuda-*`, `opencv-python` из `requirements.txt` перед установкой.
+- **Фильтрация зависимостей:** Создан отдельный скрипт `scripts/filter_requirements.py`, который читает `/tmp/all-requirements.txt`, убирает GPU-зависимости (torch, torchvision, triton, nvidia-*, cuda-*, opencv-python) и пишет отфильтрованный список в `/tmp/filtered-requirements.txt`. Скрипт тестируем отдельно (`pytest`), логирует в stderr: `Filtered: kept 42, skipped 7 packages`.
 - **Использование uv:** Перешёл на `uv` для установки отфильтрованных зависимостей — быстрее `pip`, лучше кэширование, надёжная работа с lock-файлами.
-- **Multi-stage build:** Разделил Dockerfile на этапы: установка системных зависимостей → установка PyTorch CPU → установка отфильтрованных Python-зависимостей → копирование кода.
+- **Multi-stage build:** Разделил Dockerfile на этапы: установка системных зависимостей → установка PyTorch CPU → фильтрация зависимостей → установка через uv → копирование кода.
 
 ```dockerfile
 # ШАГ 1: Torch CPU через pip (официальная рекомендация PyTorch)
@@ -57,10 +57,13 @@ RUN pip install --no-cache-dir \
 # ШАГ 2: Остальные зависимости через uv с фильтрацией CUDA
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 COPY pyproject.toml uv.lock ./
+COPY scripts/filter_requirements.py /tmp/filter_requirements.py
 
-RUN uv export --no-hashes --no-emit-project --no-dev > /tmp/all-requirements.txt && \
-    python3 -c "skip_prefixes=['torch','torchvision','triton','nvidia-','cuda-'];skip_exact=['opencv-python'];[print(line,end='') for line in open('/tmp/all-requirements.txt') if not (any(line.split('==')[0].split('@')[0].strip().lower().startswith(p) for p in skip_prefixes) or line.split('==')[0].split('@')[0].strip().lower() in skip_exact)]" > /tmp/filtered-requirements.txt && \
-    uv pip install --system --no-deps -r /tmp/filtered-requirements.txt
+RUN uv export --no-hashes --no-emit-project --no-dev > /tmp/all-requirements.txt \
+    && python3 /tmp/filter_requirements.py \
+    && uv pip install --system --no-deps -r /tmp/filtered-requirements.txt \
+    && rm -f /tmp/all-requirements.txt /tmp/filtered-requirements.txt \
+           /tmp/filter_requirements.py uv.lock pyproject.toml
 
 # ШАГ 3: Код приложения + security hardening
 COPY app/ ./app/
@@ -68,7 +71,7 @@ RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 USER appuser
 ```
 
-**Результат:** Размер ML-образа **5.24 GiB → 1.23 GiB (-77%)**. Ускорен деплой (меньше данных по сети), снижена нагрузка на Container Registry, упрощена доставка артефактов в продакшн-среду.
+**Результат:** Размер ML-образа **5.24 GiB → 1.23 GiB (-77%)**. Ускорен деплой (меньше данных по сети), снижена нагрузка на Container Registry, упрощена доставка артефактов в продакшн-среду. Логика фильтрации вынесена в тестируемый скрипт — можно покрыть unit-тестами и переиспользовать в других проектах.
 
 ## 📊 Результаты и Метрики
 
