@@ -9,7 +9,7 @@ parent: Кейсы и проекты
 
 **Роль:** DevOps Engineer  
 **Длительность:** ~68 часов (полный цикл от аудита до Post-Migration Support)  
-**Стек:** Cloud VPS, GitLab CI, Kaniko, Docker, Traefik, Managed MySQL 8.0, Ansible, Bash, Python.
+**Стек:** Cloud VPS, GitLab CI, Kaniko, Docker, Traefik, Managed MySQL 8.0, Ansible, Bash, Python, Shell.
 
 ## 🎯 Проблема и Контекст (Baseline)
 Проект работал в облаке "А" на устаревшей архитектуре (Container-Optimized OS, Instance Groups) с ручным деплоем. 
@@ -29,7 +29,27 @@ parent: Кейсы и проекты
 ### 2. DevSecOps и CI/CD с нуля
 - Полный отказ от DinD в пользу **Kaniko**: сборка идет в раннере без привилегированного доступа, что устраняет attack surface, присущий DinD.
 - **Deep Healthcheck:** Написан кастомный Python-скрипт, проверяющий не только порт, но и физическое подключение к БД, и наличие PID-файлов фоновых процессов (Celery).
-- **Frontend Runtime Config:** Реализован механизм `window._env_` и кастомный `docker-entrypoint.sh`. Артефакт стал универсальным: для смены API URL больше не требуется пересборка образа.
+- **Frontend Runtime Config:** 
+  - **Baseline:** Vite на этапе `npm run build` встраивал `VITE_API_ENDPOINT` прямо в JS-бандл. Любая смена API URL (dev → staging → prod) требовала пересборки образа — артефакт был «привязан» к окружению.
+  - **Решение:** паттерн runtime injection через `window._env_`. Бандл собирается один раз без зашитых URL; конкретный endpoint инжектится в момент `docker run` через переменную окружения.
+  
+  Кастомный `docker-entrypoint.sh` генерирует JS-файл с конфигами при старте контейнера:
+
+  ```bash
+  #!/bin/sh
+  CONFIG_FILE="/usr/share/nginx/html/env-config.js"
+  
+  echo "window._env_ = {" >$CONFIG_FILE
+  if [ -n "$VITE_API_ENDPOINT" ]; then
+    echo "  VITE_API_ENDPOINT: \"$VITE_API_ENDPOINT\"," >>$CONFIG_FILE
+  fi
+  echo "};" >>$CONFIG_FILE
+  
+  exec "$@"
+  ```
+
+  Во фронтенде `index.html` подключает `/env-config.js` перед основным бандлом — переменные доступны как `window._env_.VITE_API_ENDPOINT` в рантайме.
+  - **Результат:** единый Docker-образ работает во всех средах. Для деплоя в новое окружение достаточно передать `docker run -e VITE_API_ENDPOINT=https://api.prod.example.com ...`. Пересборка не требуется.
 
 ### 3. Управление рисками при миграции (Zero-Downtime)
 - **Аудит DNS:** Выявлены скрытые зависимости (поддомены на IP облака "А"), которые не были учтены в исходном ТЗ. Проведена WHOIS-верификация.
@@ -44,6 +64,7 @@ parent: Кейсы и проекты
 | **Downtime при Cutover** | **< 60 минут** (включая смену DNS, выпуск SSL и фикс инцидента с конфигурацией). |
 | **Безопасность** | Исключено хранение кода на Prod. Устранены уязвимости DinD и root-контейнеров. |
 | **Скорость итераций** | Внедрен Git Flow. Деплой на Dev происходит автоматически при пуше, на Prod — по тегу. Разработчики больше не обращаются к серверам напрямую: человеческий фактор в деплое исключен. |
+| **Универсальность артефактов** | Устранена пересборка фронтенда при смене окружения. Единый образ для dev/staging/prod через runtime injection переменных. |
 
 ## 🏗 Архитектура решения
 
