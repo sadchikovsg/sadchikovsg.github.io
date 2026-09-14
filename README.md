@@ -158,6 +158,8 @@ This ensures Telegram, LinkedIn, and Twitter always fetch the latest preview wit
 
 <div align="center">
 
-**Built with ❤️ and Jekyll · Hosted on GitHub Pages · Last updated: {{ site.time | date: '%Y-%m-%d' }}**
+**Built with ❤️ and Jekyll · Hosted on GitHub Pages**
+
+![Last updated](https://img.shields.io/github/last-commit/sadchikovsg/sadchikovsg.github.io?style=flat-square&label=Last%20updated)
 
 </div>
