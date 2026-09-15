@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌐 Personal Portfolio Website
+# Personal Portfolio Website
 
 **DevOps Engineer Portfolio with detailed case studies and architecture diagrams**
 
@@ -9,13 +9,13 @@
 [![Jekyll](https://img.shields.io/badge/Built%20with-Jekyll-CC0000?style=for-the-badge&logo=jekyll&logoColor=white)](https://jekyllrb.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-[📄 Download CV (PDF)](https://sadchikovsg.ru/assets/CV_Sadchikovsg_DevOps.pdf) · [💼 LinkedIn](https://linkedin.com/in/sadchikovsg) · [✈️ Telegram](https://t.me/chill_devops)
+[Download CV (PDF)](https://sadchikovsg.ru/assets/CV_Sadchikovsg_DevOps.pdf) · [LinkedIn](https://linkedin.com/in/sadchikovsg) · [Telegram](https://t.me/chill_devops)
 
 </div>
 
 ---
 
-## 📖 About
+## About
 
 This repository contains the source code for my personal portfolio website, showcasing my work as a **DevOps / Platform Engineer** with 4+ years of commercial experience and a 7-year foundation in Linux/network systems administration.
 
@@ -46,7 +46,7 @@ This repository contains the source code for my personal portfolio website, show
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |:---|:---|
@@ -59,7 +59,7 @@ This repository contains the source code for my personal portfolio website, show
 
 ---
 
-## 🚀 Local Development
+## Local Development
 
 ### Prerequisites
 
@@ -93,7 +93,7 @@ bundle exec jekyll serve --livereload
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -118,7 +118,7 @@ bundle exec jekyll serve --livereload
 
 ---
 
-## 🔑 Key Features
+## Key Features
 
 ### Defensive Wording
 
@@ -147,7 +147,7 @@ This ensures Telegram, LinkedIn, and Twitter always fetch the latest preview wit
 
 ---
 
-## 📬 Contact
+## Contact
 
 - **Portfolio:** [sadchikovsg.ru](https://sadchikovsg.ru)
 - **Email:** [sadchikovsg@gmail.com](mailto:sadchikovsg@gmail.com)
@@ -158,7 +158,7 @@ This ensures Telegram, LinkedIn, and Twitter always fetch the latest preview wit
 
 <div align="center">
 
-**Built with ❤️ and Jekyll · Hosted on GitHub Pages**
+**Built with and Jekyll · Hosted on GitHub Pages**
 
 ![Last updated](https://img.shields.io/github/last-commit/sadchikovsg/sadchikovsg.github.io?style=flat-square&label=Last%20updated)
 

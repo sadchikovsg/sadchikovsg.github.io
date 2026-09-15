@@ -5,20 +5,20 @@ nav_order: 3
 parent: Кейсы и проекты
 ---
 
-# 💼 Кейс 3: Разработка Internal Developer Platform (IDP) для хакатона
+# Кейс 3: Разработка Internal Developer Platform (IDP) для хакатона
 
 **Роль:** DevOps / Platform Engineer  
 **Длительность:** ~83 часа (полный цикл: от проектирования до поддержки в проде и демонтажа)  
 **Стек:** GitLab Self-Managed, Podman (rootless), Traefik, Terraform, Ansible, Bash, systemd.
 
-## 🎯 Проблема и Контекст (Baseline)
+## Проблема и Контекст (Baseline)
 Необходимо было предоставить 5 изолированным командам надежную среду для 2-дневного хакатона (стек: .NET, React, Telegram-боты, SQLite/PostgreSQL). 
 **Ключевые боли:**
 - Зависимость от внешних SaaS-решений с ограничениями на регистрацию и доступ.
 - Риск того, что участники или наставники "сломают" пайплайн, пытаясь изменить его код "на лету".
 - Высокая вероятность сетевых коллизий при одновременном деплое нескольких команд.
 
-## 🛠 Инженерные решения (Action)
+## Инженерные решения (Action)
 
 ### 1. Platform as a Product (Централизованные шаблоны)
 - Создан единый платформенный репозиторий (`platform`), содержащий переиспользуемые CI/CD workflow (через `include`) и стандартизированные `docker-compose` манифесты.
@@ -71,7 +71,7 @@ ExecStartPost=/usr/bin/setfacl -m u:gitlab-runner:rw %t/podman/podman.sock
 - **Аудит бэкапов:** выявлены два root-cause роста архивов до 9.1 ГБ — архивация Container Registry и баг `GITLAB_OMNIBUS_CONFIG` (параметры не сохранялись при перезапуске).
 - **Решение:** Внедрена прямая запись в `gitlab.rb` через Ansible + флаг `SKIP=registry` при бэкапе.
 
-## 📊 Результаты и Метрики
+## Результаты и Метрики
 
 | Метрика | Результат |
 | :--- | :--- |
@@ -81,7 +81,7 @@ ExecStartPost=/usr/bin/setfacl -m u:gitlab-runner:rw %t/podman/podman.sock
 | **Rootless-доступ GitLab Runner** | Решена проблема потери ACL на сокете Podman после перезагрузки через systemd drop-in в `podman.service.d/` (не в `podman.socket.d/` — там `[Service]` игнорируется). |
 | **Безопасность** | Rootless-исполнение, автоматическая очистка ресурсов после мероприятия (полный демонтаж через Terraform). |
 
-## 🏗 Архитектура платформы
+## Архитектура платформы
 
 ```mermaid
 graph TD

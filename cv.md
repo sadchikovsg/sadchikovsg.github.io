@@ -4,17 +4,17 @@ layout: page
 nav_order: 3
 ---
 
-[⬇️ Скачать CV в формате PDF](/assets/CV_Sadchikovsg_DevOps.pdf){: .btn .btn-primary .cv-dl-mobile }
+[Скачать CV в формате PDF](/assets/CV_Sadchikovsg_DevOps.pdf){: .btn .btn-primary .cv-dl-mobile }
 
 ---
 
-# 📄 Сергей Садчиков
+# Сергей Садчиков
 
 **DevOps / Platform Engineer** · **Удалённая работа** · **от 200 000 ₽ на руки** · **Полная занятость**
 
 ---
 
-## 🎯 Summary
+## Summary
 
 DevOps/Platform Engineer с **4+ годами коммерческого опыта** в построении отказоустойчивой инфраструктуры, автоматизации CI/CD и внедрении DevSecOps-практик, подкрепленными **7-летним фундаментом** в системном администрировании Linux и сетей.
 
@@ -33,7 +33,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 
 ---
 
-## 💼 Опыт работы
+## Опыт работы
 
 ### Июль 2025 — настоящее время (1 год 3 месяца)
 **ООО ПКО «ХАБЕР»** | DevOps Engineer (Проектная деятельность)
@@ -157,7 +157,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 
 ---
 
-## 🔬 Homelab / R&D
+## Homelab / R&D
 
 Развернул собственный лабораторный стенд для выхода за рамки VPS/Managed-парадигмы и отработки декларативной оркестрации на реальном железе.
 
@@ -169,7 +169,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 
 ---
 
-## 🎓 Образование
+## Образование
 
 ### Высшее образование
 **2008** — Волгоградский государственный университет  
@@ -183,7 +183,7 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 
 ---
 
-## 📬 Контакты
+## Контакты
 
 - **Telegram:** [@chill_devops](https://t.me/chill_devops)
 - **Email:** [sadchikovsg@gmail.com](mailto:sadchikovsg@gmail.com)
