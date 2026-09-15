@@ -37,13 +37,21 @@
             h1 { font-size: 20pt; }
             a { color: #333; text-decoration: none; }
         }
+    
+        @media print {
+            body { padding: 0; }
+            h1 { font-size: 19pt; margin-bottom: 4px; }
+            h2 { margin: 9px 0 5px 0; padding-bottom: 2px; }
+            .subtitle { margin-bottom: 6px; }
+            .contacts { margin-bottom: 10px; }
+            .summary { margin-bottom: 8px; }
+            table { margin-bottom: 6px; }
+            .job { margin-bottom: 8px; }
+            .job li { margin-bottom: 2px; }
+            footer { margin-top: 6px; padding-top: 4px; }
+        }
     </style>
 </head>
-<footer style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #ddd;
-               font-size: 8pt; color: #888; text-align: center;">
-  <!-- REVISION_LINE -->
-  <span>Source: github.com/sadchikovsg/sadchikovsg.github.io</span>
-</footer>
 <body>
 
 <h1>Сергей Садчиков</h1>
@@ -117,5 +125,9 @@ DevOps-инженер с 4+ годами коммерческого опыта �
     <li><strong>2008:</strong> Радиофизика и электроника, Волгоградский государственный университет</li>
 </ul>
 
+<footer style="margin-top:6px; padding-top:4px; border-top:1px solid #ddd; font-size:7.5pt; color:#888; text-align:center;">
+  <!-- REVISION_LINE -->
+  <span>Source: github.com/sadchikovsg/sadchikovsg.github.io</span>
+</footer>
 </body>
 </html>
