@@ -22,14 +22,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Inject build metadata into HTML (values baked into PDF only)
         run: |
           sed -i "s|<!-- REVISION_LINE -->|<span>Revision: ${GITHUB_SHA:0:7}</span> \&middot; <span>Built: $(date -u +'%Y-%m-%d %H:%M UTC')</span> \&middot;|" assets/cv-one-page.html
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
 

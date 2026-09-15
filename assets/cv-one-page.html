@@ -56,6 +56,13 @@
             .contacts { font-size: 8pt; margin-bottom: 8px; }
             footer { margin-top: 2px; padding-top: 2px; border-top: none; font-size: 6.5pt; color: #999; }
         }
+    
+        .cv-footer { margin-top: 2px; padding-top: 2px; border-top: none; font-size: 6.5pt; color: #999; text-align: center; }
+        @media print {
+            .cv-footer { display: none; }
+            .summary { text-align: left; }
+            body { padding: 0 1mm; }
+        }
     </style>
 </head>
 <body>
@@ -131,7 +138,7 @@ DevOps-инженер с 4+ годами коммерческого опыта �
     <li><strong>2008:</strong> Радиофизика и электроника, Волгоградский государственный университет</li>
 </ul>
 
-<footer style="margin-top:6px; padding-top:4px; border-top:1px solid #ddd; font-size:7.5pt; color:#888; text-align:center;">
+<footer class="cv-footer">
   <!-- REVISION_LINE -->
   <span>Source: github.com/sadchikovsg/sadchikovsg.github.io</span>
 </footer>
