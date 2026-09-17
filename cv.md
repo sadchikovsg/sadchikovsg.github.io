@@ -189,5 +189,5 @@ DevOps/Platform Engineer с **4+ годами коммерческого опы�
 - **Telegram:** [@chill_devops](https://t.me/chill_devops)
 - **Email:** [sadchikovsg@gmail.com](mailto:sadchikovsg@gmail.com)
 - **GitHub:** [github.com/sadchikovsg](https://github.com/sadchikovsg)
-- **LinkedIn:** [linkedin.com/in/sergey-sadchikov-devops](https://www.linkedin.com/in/sergey-sadchikov-devops/)
+- **LinkedIn:** [linkedin.com/in/sadchikovsg](https://www.linkedin.com/in/sadchikovsg/)
 - **Портфолио:** [sadchikovsg.ru](https://sadchikovsg.ru)
