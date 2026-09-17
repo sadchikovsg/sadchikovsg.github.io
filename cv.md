@@ -1,4 +1,5 @@
 ---
+redirect_from: /cv.html
 title: Резюме
 layout: page
 nav_order: 3

@@ -1,4 +1,5 @@
 ---
+redirect_from: /projects.html
 title: Кейсы и проекты
 layout: page
 nav_order: 3

@@ -1,4 +1,5 @@
 ---
+redirect_from: /projects/case-3-hackathon-platform.html
 title: "Кейс 3: Разработка Internal Developer Platform (IDP) для хакатона"
 layout: page
 nav_order: 3

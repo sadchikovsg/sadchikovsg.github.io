@@ -1,4 +1,5 @@
 ---
+redirect_from: /projects/case-1-migration.html
 title: "Кейс 1: Миграция и платформенная трансформация Legacy-проекта"
 layout: page
 nav_order: 1

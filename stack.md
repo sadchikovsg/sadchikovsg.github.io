@@ -1,4 +1,5 @@
 ---
+redirect_from: /stack.html
 title: Технологический стек
 layout: page
 nav_order: 2

@@ -1,4 +1,5 @@
 ---
+redirect_from: /projects/case-2-iac-devsecops.html
 title: "Кейс 2: Построение DevSecOps-платформы и IaC для EdTech-продукта"
 layout: page
 nav_order: 2

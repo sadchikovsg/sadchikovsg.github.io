@@ -23,3 +23,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+permalink: pretty
+
+plugins:
+  - jekyll-redirect-from

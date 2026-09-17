@@ -1,4 +1,5 @@
 ---
+redirect_from: /projects/case-4-reliable-backup.html
 title: "Кейс 4: Построение отказоустойчивой системы резервного копирования (Restic + Ansible)"
 layout: page
 nav_order: 4
