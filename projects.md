@@ -13,9 +13,9 @@ has_toc: false
 <div class="mobile-toc">
   <h2 class="text-delta">Содержание</h2>
   <ul>
-    <li><a href="/projects/case-1-migration/">Кейс 1: Миграция и платформенная трансформация Legacy-проекта</a></li>
-    <li><a href="/projects/case-2-iac-devsecops/">Кейс 2: Построение DevSecOps-платформы и IaC для EdTech-продукта</a></li>
-    <li><a href="/projects/case-3-hackathon-platform/">Кейс 3: Разработка Internal Developer Platform (IDP) для хакатона</a></li>
-    <li><a href="/projects/case-4-reliable-backup/">Кейс 4: Построение отказоустойчивой системы резервного копирования (Restic + Ansible)</a></li>
+    {%- assign cases = site.pages | where_exp: "p", "p.parent == 'Кейсы и проекты'" | sort: "nav_order" -%}
+    {%- for c in cases -%}
+      <li><a href="{{ c.url | relative_url }}">{{ c.title }}</a></li>
+    {%- endfor -%}
   </ul>
 </div>
